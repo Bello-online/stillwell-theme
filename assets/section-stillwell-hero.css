@@ -1,0 +1,192 @@
+/* Stillwell hero: split editorial banner. Text panel on the section colour scheme,
+   image full-bleed to the viewport edge on desktop, stacked image-over-text on mobile. */
+
+.stillwell-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'media'
+    'panel';
+  position: relative;
+  overflow: hidden;
+}
+
+/* Media */
+.stillwell-hero__media {
+  grid-area: media;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.stillwell-hero__image,
+.stillwell-hero__placeholder,
+.stillwell-hero__placeholder .placeholder-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stillwell-hero__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.stillwell-hero__fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgb(var(--color-background)) 0, rgba(var(--color-background), 0) 22%);
+}
+
+/* Text panel */
+.stillwell-hero__panel {
+  grid-area: panel;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.stillwell-hero__content {
+  width: 100%;
+  max-width: 56rem;
+}
+
+.stillwell-hero__eyebrow {
+  margin: 0 0 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.72);
+}
+
+.stillwell-hero__heading {
+  margin: 0 0 1.8rem;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: clamp(3.2rem, 5vw, 6.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: rgb(var(--color-foreground));
+}
+
+.stillwell-hero__text {
+  margin: 0 0 2.8rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+.stillwell-hero__text p {
+  margin: 0;
+}
+
+.stillwell-hero__text p + p {
+  margin-top: 1rem;
+}
+
+.stillwell-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0 0 2.8rem;
+}
+
+/* Trust line */
+.stillwell-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: rgba(var(--color-foreground), 0.82);
+}
+
+.stillwell-hero__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.stillwell-hero__check {
+  flex: none;
+  color: rgb(var(--color-button));
+}
+
+/* Tablet: give the stacked layout more breathing room */
+@media screen and (min-width: 750px) {
+  .stillwell-hero__panel {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .stillwell-hero__text {
+    font-size: 1.7rem;
+  }
+}
+
+/* Desktop: 5/7 split, image full-bleed to its edge, fade joins it to the panel */
+@media screen and (min-width: 990px) {
+  .stillwell-hero {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-areas: 'panel media';
+    min-height: 68vh;
+  }
+
+  .stillwell-hero--image-left {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-areas: 'media panel';
+  }
+
+  .stillwell-hero__media {
+    aspect-ratio: auto;
+    min-height: 68vh;
+    height: 100%;
+  }
+
+  .stillwell-hero__fade {
+    background:
+      linear-gradient(to right, rgb(var(--color-background)) 0, rgba(var(--color-background), 0) 26%),
+      linear-gradient(to bottom, rgba(var(--color-background), 0.45) 0, rgba(var(--color-background), 0) 28%);
+  }
+
+  .stillwell-hero--image-left .stillwell-hero__fade {
+    background:
+      linear-gradient(to left, rgb(var(--color-background)) 0, rgba(var(--color-background), 0) 26%),
+      linear-gradient(to bottom, rgba(var(--color-background), 0.45) 0, rgba(var(--color-background), 0) 28%);
+  }
+
+  .stillwell-hero__panel {
+    padding-left: max(5rem, calc((100vw - var(--page-width)) / 2 + 5rem));
+    padding-right: 4rem;
+  }
+
+  .stillwell-hero--image-left .stillwell-hero__panel {
+    padding-left: 4rem;
+    padding-right: max(5rem, calc((100vw - var(--page-width)) / 2 + 5rem));
+  }
+
+  .stillwell-hero__eyebrow {
+    font-size: 1.2rem;
+  }
+
+  .stillwell-hero__text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stillwell-hero,
+  .stillwell-hero * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

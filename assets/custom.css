@@ -79,6 +79,57 @@ h1, h2, h3, .h0, .h1, .h2, .h3 {
   font-weight: 500;
 }
 
+/* Product page: editorial title, quiet price, roomier info column */
+.product__title h1,
+.product__title .h1 {
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.8rem, 3.5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.product__info-container .price,
+.product__info-container .price .price-item {
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+}
+.product__info-container .price--on-sale .price-item--regular {
+  font-size: 1.5rem;
+}
+.product__info-container {
+  max-width: 56rem;
+}
+@media screen and (min-width: 990px) {
+  .product__info-wrapper {
+    padding-left: 5rem;
+  }
+  .product--right .product__info-wrapper {
+    padding-left: 0;
+    padding-right: 5rem;
+  }
+}
+
+/* Variant pills: match the button radius */
+.product-form__input--pill input[type='radio'] + label {
+  border-radius: 0.6rem;
+}
+
+/* Collapsible tabs: hairline dividers only, no boxed borders */
+.product__accordion .accordion {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.14);
+  border-bottom: 0;
+  margin-top: 0;
+}
+.product__accordion .accordion:last-of-type,
+.product__accordion:last-of-type .accordion {
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.14);
+}
+.product__accordion .accordion summary {
+  padding: 1.8rem 0;
+}
+.product__accordion .accordion__content {
+  padding-bottom: 1.8rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card-wrapper .card,
   .card-wrapper:hover .card {

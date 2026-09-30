@@ -1,0 +1,231 @@
+{{ 'section-stillwell-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign image = section.settings.image
+  assign trust_items = ''
+  if section.settings.trust_1 != blank
+    assign trust_items = trust_items | append: section.settings.trust_1 | append: '||'
+  endif
+  if section.settings.trust_2 != blank
+    assign trust_items = trust_items | append: section.settings.trust_2 | append: '||'
+  endif
+  if section.settings.trust_3 != blank
+    assign trust_items = trust_items | append: section.settings.trust_3 | append: '||'
+  endif
+  assign trust_items = trust_items | split: '||'
+-%}
+
+<div class="stillwell-hero stillwell-hero--image-{{ section.settings.image_position }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="stillwell-hero__media">
+    {%- if image != blank -%}
+      {{
+        image
+        | image_url: width: 2400
+        | image_tag:
+          width: image.width,
+          height: image.height,
+          class: 'stillwell-hero__image',
+          widths: '750, 1100, 1500, 2000, 2400',
+          sizes: '(min-width: 990px) 58vw, 100vw',
+          loading: 'eager',
+          fetchpriority: 'high'
+      }}
+    {%- else -%}
+      <div class="stillwell-hero__placeholder placeholder">
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+    <span class="stillwell-hero__fade" aria-hidden="true"></span>
+  </div>
+
+  <div class="stillwell-hero__panel section-{{ section.id }}-padding">
+    <div class="stillwell-hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="stillwell-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="stillwell-hero__heading">{{ section.settings.heading | escape }}</h1>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="stillwell-hero__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank or section.settings.button_label_2 != blank -%}
+        <div class="stillwell-hero__buttons">
+          {%- if section.settings.button_label != blank -%}
+            <a
+              {% if section.settings.button_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.button_link }}"
+              {% endif %}
+              class="button"
+            >
+              {{- section.settings.button_label | escape -}}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.button_label_2 != blank -%}
+            <a
+              {% if section.settings.button_link_2 == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.button_link_2 }}"
+              {% endif %}
+              class="button button--secondary"
+            >
+              {{- section.settings.button_label_2 | escape -}}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if trust_items.size > 0 -%}
+        <ul class="stillwell-hero__trust list-unstyled" role="list">
+          {%- for item in trust_items -%}
+            <li class="stillwell-hero__trust-item">
+              <svg class="stillwell-hero__check" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="14" height="14">
+                <path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{{ item | escape }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Stillwell hero",
+  "tag": "section",
+  "class": "section section-stillwell-hero",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Landscape, at least 2400 px wide. Leave the side nearest the text fairly plain; a soft fade joins it to the text panel."
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position on desktop",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Supplements, chosen carefully"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Fewer bottles. Better ones."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>A short list of supplements in usable forms at research doses. Every batch is third-party tested and every label lists the full amounts.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "Shop bestsellers"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Secondary button label",
+      "default": "How to choose"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Trust line"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Item 1",
+      "default": "Third-party tested"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Item 2",
+      "default": "30-day returns, even opened"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Item 3",
+      "default": "Free shipping over $60"
+    },
+    {
+      "type": "header",
+      "content": "Colour and spacing"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stillwell hero"
+    }
+  ]
+}
+{% endschema %}

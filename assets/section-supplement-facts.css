@@ -1,0 +1,257 @@
+/* Supplement facts: a clean label-style panel with a "why it is in here" column.
+   Semantic table on tablet and up; stacked cards with inline labels on mobile. */
+
+.supplement-facts {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.supplement-facts__header {
+  max-width: 64rem;
+}
+
+.supplement-facts__heading {
+  margin: 0 0 1.2rem;
+}
+
+.supplement-facts__intro {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.8);
+}
+
+.supplement-facts__intro p {
+  margin: 0;
+}
+
+/* Panel */
+.supplement-facts__panel {
+  border: 0.1rem solid rgba(var(--color-foreground), 0.16);
+  border-top: 0.4rem solid rgb(var(--color-foreground));
+  border-radius: var(--media-radius, 0.8rem);
+  background: rgb(var(--color-background));
+  overflow: hidden;
+}
+
+.supplement-facts__serving {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 2.4rem;
+  padding: 1.4rem 1.6rem;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.16);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Table */
+.supplement-facts__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.4rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.supplement-facts__table thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.supplement-facts__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.4rem 1.6rem;
+  padding: 1.4rem 1.6rem;
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+}
+
+.supplement-facts__row:first-child {
+  border-top: 0;
+}
+
+.supplement-facts__row:nth-child(even) {
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.supplement-facts__table th,
+.supplement-facts__table td {
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+}
+
+.supplement-facts__ingredient {
+  grid-column: 1;
+  font-weight: 600;
+}
+
+.supplement-facts__amount,
+.supplement-facts__dv {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.supplement-facts__amount {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: right;
+}
+
+.supplement-facts__dv {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: right;
+  color: rgba(var(--color-foreground), 0.72);
+}
+
+.supplement-facts__why {
+  grid-column: 1;
+  grid-row: 2;
+  color: rgba(var(--color-foreground), 0.78);
+}
+
+.supplement-facts__table--no-dv .supplement-facts__why {
+  grid-column: 1 / -1;
+}
+
+/* Mobile inline labels for the numeric cells */
+.supplement-facts__dv::before {
+  content: attr(data-label) ' ';
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.72);
+}
+
+/* Metafield fallback, empty state, footnote, disclaimer */
+.supplement-facts__metafield {
+  padding: 1.6rem;
+}
+
+.supplement-facts__metafield table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.supplement-facts__metafield td,
+.supplement-facts__metafield th {
+  padding: 0.8rem 0;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  text-align: left;
+}
+
+.supplement-facts__empty {
+  margin: 0;
+  padding: 1.6rem;
+  color: rgba(var(--color-foreground), 0.72);
+}
+
+.supplement-facts__footnote {
+  padding: 1.2rem 1.6rem 1.4rem;
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.16);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.supplement-facts__footnote p {
+  margin: 0;
+}
+
+.supplement-facts__disclaimer {
+  max-width: 72rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.68);
+}
+
+.supplement-facts__disclaimer p {
+  margin: 0;
+}
+
+/* Tablet and desktop: real table columns */
+@media screen and (min-width: 750px) {
+  .supplement-facts__table thead {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+
+  .supplement-facts__table thead th {
+    padding: 1.2rem 1.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.72);
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.16);
+  }
+
+  .supplement-facts__row {
+    display: table-row;
+    padding: 0;
+  }
+
+  .supplement-facts__row:first-child {
+    border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  }
+
+  .supplement-facts__table tbody th,
+  .supplement-facts__table tbody td {
+    padding: 1.3rem 1.6rem;
+    border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  }
+
+  .supplement-facts__table thead th.supplement-facts__col-amount,
+  .supplement-facts__table thead th.supplement-facts__col-dv {
+    text-align: right;
+  }
+
+  .supplement-facts__col-ingredient {
+    width: 30%;
+  }
+
+  .supplement-facts__col-amount,
+  .supplement-facts__col-dv {
+    width: 14%;
+  }
+
+  .supplement-facts__dv::before {
+    content: none;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .supplement-facts {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .supplement-facts__disclaimer {
+    grid-column: 2;
+  }
+
+  .supplement-facts__table {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .supplement-facts,
+  .supplement-facts * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

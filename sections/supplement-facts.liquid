@@ -1,0 +1,263 @@
+{{ 'section-supplement-facts.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign has_rows = false
+  if section.blocks.size > 0
+    assign has_rows = true
+  endif
+  assign metafield_facts = blank
+  if has_rows == false and product != blank and product.metafields.custom.supplement_facts != blank
+    assign metafield_facts = product.metafields.custom.supplement_facts
+  endif
+  assign has_daily_value = false
+  for block in section.blocks
+    if block.settings.dv != blank
+      assign has_daily_value = true
+      break
+    endif
+  endfor
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="supplement-facts">
+      <header class="supplement-facts__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="supplement-facts__heading h1">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.intro != blank -%}
+          <div class="supplement-facts__intro rte">{{ section.settings.intro }}</div>
+        {%- endif -%}
+      </header>
+
+      <div class="supplement-facts__panel">
+        {%- if section.settings.serving != blank or section.settings.servings_per != blank -%}
+          <div class="supplement-facts__serving">
+            {%- if section.settings.serving != blank -%}
+              <span class="supplement-facts__serving-item">{{ section.settings.serving | escape }}</span>
+            {%- endif -%}
+            {%- if section.settings.servings_per != blank -%}
+              <span class="supplement-facts__serving-item">{{ section.settings.servings_per | escape }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if has_rows -%}
+          <table class="supplement-facts__table{% unless has_daily_value %} supplement-facts__table--no-dv{% endunless %}">
+            <caption class="visually-hidden">
+              {%- if product != blank -%}
+                Supplement facts for {{ product.title | escape }}: ingredient, amount per serving, daily value and why it is included.
+              {%- else -%}
+                Supplement facts: ingredient, amount per serving, daily value and why it is included.
+              {%- endif -%}
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="supplement-facts__col-ingredient">Ingredient</th>
+                <th scope="col" class="supplement-facts__col-amount">Amount per serving</th>
+                {%- if has_daily_value -%}
+                  <th scope="col" class="supplement-facts__col-dv">% daily value</th>
+                {%- endif -%}
+                <th scope="col" class="supplement-facts__col-why">Why it is in here</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for block in section.blocks -%}
+                <tr class="supplement-facts__row" {{ block.shopify_attributes }}>
+                  <th scope="row" class="supplement-facts__ingredient">{{ block.settings.ingredient | escape }}</th>
+                  <td class="supplement-facts__amount" data-label="Amount per serving">{{ block.settings.amount | escape }}</td>
+                  {%- if has_daily_value -%}
+                    <td class="supplement-facts__dv" data-label="% daily value">
+                      {%- if block.settings.dv != blank -%}{{ block.settings.dv | escape }}{%- else -%}<span aria-hidden="true">&ndash;</span><span class="visually-hidden">Not established</span>{%- endif -%}
+                    </td>
+                  {%- endif -%}
+                  <td class="supplement-facts__why" data-label="Why it is in here">{{ block.settings.why | escape }}</td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        {%- elsif metafield_facts != blank -%}
+          <div class="supplement-facts__metafield rte">{{ metafield_facts | metafield_tag }}</div>
+        {%- else -%}
+          <p class="supplement-facts__empty">Add ingredient rows to this section, or fill the product's Supplement facts metafield, to show the panel here.</p>
+        {%- endif -%}
+
+        {%- if section.settings.footnote != blank -%}
+          <div class="supplement-facts__footnote rte">{{ section.settings.footnote }}</div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.show_disclaimer and section.settings.disclaimer != blank -%}
+        <div class="supplement-facts__disclaimer rte">{{ section.settings.disclaimer }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Supplement facts",
+  "tag": "section",
+  "class": "section section-supplement-facts",
+  "max_blocks": 16,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add one row per ingredient. If no rows are added, the section shows the product's Supplement facts metafield (custom.supplement_facts, rich text) instead."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What's in it, and how much"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro",
+      "default": "<p>Every ingredient, its form and the amount per serving. No proprietary blends.</p>"
+    },
+    {
+      "type": "text",
+      "id": "serving",
+      "label": "Serving size",
+      "default": "Serving: 2 capsules"
+    },
+    {
+      "type": "text",
+      "id": "servings_per",
+      "label": "Servings per container",
+      "default": "30 servings per bottle"
+    },
+    {
+      "type": "richtext",
+      "id": "footnote",
+      "label": "Footnote",
+      "info": "Use for the daily value key and the check-with-your-doctor line.",
+      "default": "<p>&dagger; Daily value not established. If you take medication or are pregnant or breastfeeding, check with your pharmacist or doctor before starting.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_disclaimer",
+      "label": "Show disclaimer",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Disclaimer text",
+      "default": "<p>These statements have not been evaluated by Health Canada or the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colour and spacing"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Ingredient row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "ingredient",
+          "label": "Ingredient and form",
+          "default": "Magnesium (bisglycinate)"
+        },
+        {
+          "type": "text",
+          "id": "amount",
+          "label": "Amount per serving",
+          "default": "200 mg"
+        },
+        {
+          "type": "text",
+          "id": "dv",
+          "label": "% daily value",
+          "info": "Leave blank if not established; a dagger in the footnote covers it."
+        },
+        {
+          "type": "text",
+          "id": "why",
+          "label": "Why it is in here",
+          "default": "The form that does not upset your stomach"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Supplement facts",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "ingredient": "Vitamin D3 (cholecalciferol)",
+            "amount": "25 mcg",
+            "dv": "125%",
+            "why": "Most people are low by winter"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "ingredient": "Magnesium (bisglycinate)",
+            "amount": "200 mg",
+            "dv": "48%",
+            "why": "The form that does not upset your stomach"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "ingredient": "Zinc (picolinate)",
+            "amount": "11 mg",
+            "dv": "100%",
+            "why": "Supports normal immune function"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

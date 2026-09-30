@@ -38,13 +38,19 @@ Conversion layer (shared across our Dawn forks):
 - `snippets/free-shipping-bar.liquid` - progress bar in the cart drawer (theme settings: Conversion > Free shipping threshold, set to 60).
 - `assets/cro.css` - styles for the above. `assets/custom.css` - Stillwell brand refinements only.
 
+Stillwell-specific custom sections (own markup and CSS, no Dawn section reuse):
+
+- `sections/stillwell-hero.liquid` + `assets/section-stillwell-hero.css` - split editorial hero. Desktop is a 5/7 grid: text panel (eyebrow, Lora h1, short paragraph, primary + secondary button, three-item trust line with check icons) on the section colour scheme, image full-bleed to the viewport edge with a soft fade into the panel colour. Mobile stacks the image (4:3) above the text. Settings: `image`, `image_position` (left/right), `eyebrow`, `heading`, `text`, `button_label`/`button_link`, `button_label_2`/`button_link_2`, `trust_1..trust_3`, `color_scheme`, `padding_top`/`padding_bottom`. The homepage references `shopify://shop_images/stillwell-hero.jpg` from the store's Files; a placeholder SVG renders when no image is set.
+- `sections/supplement-facts.liquid` + `assets/section-supplement-facts.css` - label-style facts panel with a "why it is in here" column. Semantic table (`caption`, `thead`, `scope`), zebra rows, tabular-nums amounts; stacked cards with inline labels under 750 px. Settings: `heading`, `intro`, `serving`, `servings_per`, `footnote`, `show_disclaimer`, `disclaimer`, `color_scheme`, padding. Blocks (`row`, max 16): `ingredient`, `amount`, `dv`, `why`. The `% daily value` column only renders when at least one row has a value. **Metafield fallback:** when a product template instance has no rows, the section renders the product's `custom.supplement_facts` rich text metafield instead, so the merchant can fill facts per product without editing the template. The rows in `templates/product.json` are illustrative placeholders and must be replaced with the real label (or removed so the metafield takes over).
+- `sections/routine-builder.liquid` + `assets/section-routine-builder.css` - "Build a routine, not a shelf". Blocks (`slot`, max 4): `time_label`, `heading`, `text`, `collection` (card image is the collection image or its first product's image; card and button link to the collection), optional `product` shown as a "Start with:" title and price, `button_label`. Settings: `heading`, `subheading`, `color_scheme`, `card_color_scheme` (default scheme-2, top rule in the scheme's button colour), padding. Hover lift is disabled under `prefers-reduced-motion`.
+
 Stillwell-specific:
 
 - `config/settings_data.json` - palette, fonts, radii, cart drawer, predictive search with price, footer brand text, conversion settings. The `Stillwell` preset mirrors `current`.
 - `sections/header-group.json` - single announcement message (shipping and returns), sticky header on scroll up, `main-menu`.
 - `sections/footer-group.json` - brand info, `footer` menu, shipping note, newsletter, payment icons, policy links, scheme-3.
-- `templates/index.json` - hero, trust bar, Bestsellers, shop by goal, "How we choose", stats, testimonials, comparison, FAQ, newsletter.
-- `templates/product.json` - eyebrow, title, price, variant buttons, quantity, buy buttons with dynamic checkout, three reassurance icons, description, three collapsible tabs, share; then related products, testimonials, trust bar.
+- `templates/index.json` - Stillwell hero, trust bar, routine builder, Bestsellers, shop by goal, "How we choose", stats, testimonials, comparison, FAQ, newsletter.
+- `templates/product.json` - stacked gallery on the left with sticky info, eyebrow, title, price, variant buttons, quantity, buy buttons with dynamic checkout, three reassurance icons, description, three collapsible tabs, share; then supplement facts, related products, testimonials, trust bar.
 - `templates/collection.json` - banner with description, 3-column grid with vertical filters and quick add, trust bar.
 - `templates/page.json` and `templates/page.faq.json` - page body plus trust bar. Dawn's `main-page` cannot split a page body into accordion rows, so the FAQ page renders as normal prose; if you want an accordion FAQ, add a Collapsible content section in the editor and paste the questions in as rows.
 - `.github/workflows/theme-check.yml` - runs Theme Check on push and pull request to `main`, failing on errors.
@@ -73,6 +79,6 @@ Then open the preview URL the CLI prints. `shopify theme check --fail-level erro
 - Hero image for the homepage banner (the text box is dark so it reads without one, but a calm lifestyle or product photo is expected).
 - Images for the three "How we choose" rows and the three collection cards (collection images are pulled from each collection).
 - Real customer testimonials to replace the placeholder quotes on the homepage and product template. The placeholders are illustrative and should not go live.
-- The "What's in it" collapsible tab on every product: paste the full supplement facts with ingredient forms and amounts. The tab currently holds a note to the merchant.
+- Supplement facts on every product: replace the placeholder rows in the Supplement facts section with the real label, or clear the rows and fill the `custom.supplement_facts` rich text metafield per product. The "What's in it" collapsible tab still holds a note to the merchant and can be removed once the panel is filled.
 - Social links (Theme settings > Social media) and any payment methods not yet enabled at checkout.
 - Confirm the `footer` menu contains FAQ, Shipping, Returns, Track order and Contact, and that shop policies are filled in so the policy links render.

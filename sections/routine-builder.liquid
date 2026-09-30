@@ -1,0 +1,255 @@
+{{ 'section-routine-builder.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <header class="routine-builder__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="routine-builder__heading h1">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <div class="routine-builder__subheading rte">{{ section.settings.subheading }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="routine-builder routine-builder--{{ section.blocks.size }} list-unstyled" role="list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign slot_collection = block.settings.collection
+            assign slot_product = block.settings.product
+            assign card_image = blank
+            if slot_collection != blank
+              if slot_collection.featured_image != blank
+                assign card_image = slot_collection.featured_image
+              elsif slot_collection.products.first.featured_image != blank
+                assign card_image = slot_collection.products.first.featured_image
+              endif
+            endif
+            assign card_link = blank
+            if slot_collection != blank
+              assign card_link = slot_collection.url
+            endif
+            assign button_label = block.settings.button_label
+            if button_label == blank and slot_collection != blank
+              assign button_label = slot_collection.title
+            endif
+          -%}
+          <li class="routine-builder__slot" {{ block.shopify_attributes }}>
+            <article class="routine-builder__card color-{{ section.settings.card_color_scheme }} gradient">
+              <div class="routine-builder__media">
+                {%- if card_image != blank -%}
+                  {{
+                    card_image
+                    | image_url: width: 1200
+                    | image_tag:
+                      class: 'routine-builder__image',
+                      widths: '400, 600, 800, 1000, 1200',
+                      sizes: '(min-width: 990px) 30vw, (min-width: 750px) 50vw, 100vw',
+                      loading: 'lazy',
+                      alt: card_image.alt
+                  }}
+                {%- else -%}
+                  <div class="routine-builder__placeholder placeholder">
+                    {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+              </div>
+
+              <div class="routine-builder__body">
+                {%- if block.settings.time_label != blank -%}
+                  <p class="routine-builder__time">{{ block.settings.time_label | escape }}</p>
+                {%- endif -%}
+
+                {%- if block.settings.heading != blank -%}
+                  <h3 class="routine-builder__card-heading h3">
+                    {%- if card_link != blank -%}
+                      <a href="{{ card_link }}" class="routine-builder__card-link">{{ block.settings.heading | escape }}</a>
+                    {%- else -%}
+                      {{ block.settings.heading | escape }}
+                    {%- endif -%}
+                  </h3>
+                {%- endif -%}
+
+                {%- if block.settings.text != blank -%}
+                  <p class="routine-builder__text">{{ block.settings.text | escape }}</p>
+                {%- endif -%}
+
+                {%- if slot_product != blank -%}
+                  <p class="routine-builder__start">
+                    <span class="routine-builder__start-label">Start with:</span>
+                    <a href="{{ slot_product.url }}" class="routine-builder__start-product">{{ slot_product.title | escape }}</a>
+                    <span class="routine-builder__start-price">{{ slot_product.price | money }}</span>
+                  </p>
+                {%- endif -%}
+
+                {%- if button_label != blank -%}
+                  <div class="routine-builder__action">
+                    <a
+                      {% if card_link == blank %}
+                        role="link" aria-disabled="true"
+                      {% else %}
+                        href="{{ card_link }}"
+                      {% endif %}
+                      class="button button--secondary"
+                    >
+                      {{- button_label | escape -}}
+                    </a>
+                  </div>
+                {%- endif -%}
+              </div>
+            </article>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Routine builder",
+  "tag": "section",
+  "class": "section section-routine-builder",
+  "max_blocks": 4,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Build a routine, not a shelf"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Most people need one or two things, taken at the right time of day. Pick a slot and start there.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colour and spacing"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "card_color_scheme",
+      "label": "Card colour scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slot",
+      "name": "Routine slot",
+      "settings": [
+        {
+          "type": "text",
+          "id": "time_label",
+          "label": "Time of day",
+          "default": "Morning"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Cover the basics"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "One capsule with breakfast. Vitamins and minerals in the forms your body can use."
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "The card image is the collection image, or its first product's image."
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Start with (product)",
+          "info": "Optional. Shows the product title and price as a suggested starting point."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop morning"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Routine builder",
+      "blocks": [
+        {
+          "type": "slot",
+          "settings": {
+            "time_label": "Morning",
+            "heading": "Cover the basics",
+            "text": "One capsule with breakfast. Vitamins and minerals in the forms your body can use.",
+            "button_label": "Shop morning"
+          }
+        },
+        {
+          "type": "slot",
+          "settings": {
+            "time_label": "After training",
+            "heading": "Recover properly",
+            "text": "Creatine and electrolytes, at the doses used in the studies, mixed into whatever you are already drinking.",
+            "button_label": "Shop after training"
+          }
+        },
+        {
+          "type": "slot",
+          "settings": {
+            "time_label": "Evening",
+            "heading": "Wind down",
+            "text": "Magnesium and adaptogens to support a calmer evening. No sedatives, no morning fog.",
+            "button_label": "Shop evening"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

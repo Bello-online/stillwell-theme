@@ -1,51 +1,23 @@
 {
   "sections": {
     "hero": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Fewer bottles. Better ones.",
-            "heading_size": "hxl"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Stillwell is a short list of supplements chosen for usable forms and research doses. Every batch is third-party tested, every label lists the full amounts, and everything ships from Canada.",
-            "text_style": "body"
-          }
-        },
-        "buttons": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop bestsellers",
-            "button_link_1": "shopify://collections/bestsellers",
-            "button_style_secondary_1": false,
-            "button_label_2": "How to choose",
-            "button_link_2": "shopify://pages/how-to-choose",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "buttons"
-      ],
+      "type": "stillwell-hero",
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "scheme-3",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true,
-        "image": "shopify://shop_images/stillwell-hero.jpg"
+        "image": "shopify://shop_images/stillwell-hero.jpg",
+        "image_position": "right",
+        "eyebrow": "Supplements, chosen carefully",
+        "heading": "Fewer bottles. Better ones.",
+        "text": "<p>Stillwell is a short list of supplements chosen for usable forms and research doses. Every batch is third-party tested, every label lists the full amounts, and everything ships from Canada.</p>",
+        "button_label": "Shop bestsellers",
+        "button_link": "shopify://collections/bestsellers",
+        "button_label_2": "How to choose",
+        "button_link_2": "shopify://pages/how-to-choose",
+        "trust_1": "Third-party tested",
+        "trust_2": "30-day returns, even opened",
+        "trust_3": "Free shipping over $60",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "trust": {
@@ -94,6 +66,57 @@
         "color_scheme": "scheme-2",
         "padding_top": 24,
         "padding_bottom": 24
+      }
+    },
+    "routine": {
+      "type": "routine-builder",
+      "blocks": {
+        "morning": {
+          "type": "slot",
+          "settings": {
+            "time_label": "Morning",
+            "heading": "Cover the basics",
+            "text": "One capsule with breakfast. Vitamins and minerals in the forms your body can use, plus adaptogens at the doses used in the studies.",
+            "collection": "foundation-daily-essentials",
+            "product": "daily-multivitamin-capsules-with-adaptogens",
+            "button_label": "Shop daily essentials"
+          }
+        },
+        "training": {
+          "type": "slot",
+          "settings": {
+            "time_label": "After training",
+            "heading": "Recover properly",
+            "text": "Creatine and electrolytes, micronized so they mix into whatever you are already drinking. No proprietary blends.",
+            "collection": "performance-fuel-series",
+            "product": "creatine-performance-powder-micronized",
+            "button_label": "Shop performance"
+          }
+        },
+        "evening": {
+          "type": "slot",
+          "settings": {
+            "time_label": "Evening",
+            "heading": "Wind down",
+            "text": "Ashwagandha and magnesium to support a calmer evening. Check with your pharmacist if you take medication.",
+            "collection": "calm-and-sleep",
+            "product": "adaptogen-complex-with-calming-ashwagandha",
+            "button_label": "Shop calm and sleep"
+          }
+        }
+      },
+      "block_order": [
+        "morning",
+        "training",
+        "evening"
+      ],
+      "settings": {
+        "heading": "Build a routine, not a shelf",
+        "subheading": "<p>Most people need one or two things, taken at the right time of day. Pick a slot and start there.</p>",
+        "color_scheme": "scheme-1",
+        "card_color_scheme": "scheme-2",
+        "padding_top": 56,
+        "padding_bottom": 40
       }
     },
     "bestsellers": {
@@ -489,6 +512,7 @@
   "order": [
     "hero",
     "trust",
+    "routine",
     "bestsellers",
     "collections",
     "how-we-choose",
