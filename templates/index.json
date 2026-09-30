@@ -44,7 +44,8 @@
         "color_scheme": "scheme-3",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "show_text_below": true
+        "show_text_below": true,
+        "image": "shopify://shop_images/stillwell-hero.jpg"
       }
     },
     "trust": {
