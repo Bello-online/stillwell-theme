@@ -1,0 +1,53 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "help-menu": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Help",
+            "menu": "footer"
+          }
+        },
+        "shipping-note": {
+          "type": "text",
+          "settings": {
+            "heading": "Shipping and returns",
+            "subtext": "<p>Free standard shipping on orders over $60, flat $9.95 below that. 30-day returns, even if opened. We cover return shipping and there are no restocking fees.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "help-menu",
+        "shipping-note"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "newsletter_enable": true,
+        "newsletter_heading": "Short emails, no hype",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 48,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,88 @@
+/* Stillwell brand refinements. Loaded after base.css and cro.css from layout/theme.liquid.
+   Palette, fonts, radii and card styles live in config/settings_data.json; this file only
+   nudges what the theme settings cannot reach. */
+
+/* Headings: a little tighter, a little calmer */
+h1, h2, h3, .h0, .h1, .h2, .h3 {
+  letter-spacing: -0.01em;
+}
+.hxl, .hxxl {
+  letter-spacing: -0.02em;
+}
+
+/* Buttons: a touch of tracking, comfortable touch targets */
+.button,
+.shopify-challenge__button,
+.customer button {
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.product-form__submit,
+.product-form__buttons .shopify-payment-button__button,
+.sticky-atc__button,
+.quick-add__submit {
+  min-height: 4.8rem;
+}
+
+/* Announcement bar: a little more presence without shouting */
+.announcement-bar__message {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Hero: give the dark text box room to breathe when no image is set */
+.banner__box {
+  padding: 4rem 3rem;
+}
+@media screen and (min-width: 750px) {
+  .banner__box {
+    padding: 5.6rem 6rem;
+  }
+}
+.banner__text {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards: subtle lift on hover, no bounce */
+.card-wrapper .card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-wrapper:hover .card {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(var(--color-shadow), 0.08);
+}
+
+/* Stats strip: gold values on the deep green band (scheme-3 button colour is gold) */
+.color-scheme-3 .stats__value {
+  color: rgb(var(--color-button));
+}
+
+/* Trust bar: tie the icon colour to the button colour */
+.trust-bar__icon {
+  color: rgb(var(--color-button));
+}
+
+/* Product page: calmer eyebrow, clearer collapsible tab titles */
+.product__text.caption-with-letter-spacing {
+  letter-spacing: 0.12em;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+.product__accordion .accordion__title {
+  font-weight: 600;
+}
+
+/* Footer: let Lora carry the brand headline at a lighter weight */
+.footer-block__brand-info .h2 {
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-wrapper .card,
+  .card-wrapper:hover .card {
+    transition: none;
+    transform: none;
+  }
+}

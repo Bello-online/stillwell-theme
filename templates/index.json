@@ -1,0 +1,500 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fewer bottles. Better ones.",
+            "heading_size": "hxl"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Stillwell is a short list of supplements chosen for usable forms and research doses. Every batch is third-party tested, every label lists the full amounts, and everything ships from Canada.",
+            "text_style": "body"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop bestsellers",
+            "button_link_1": "shopify://collections/bestsellers",
+            "button_style_secondary_1": false,
+            "button_label_2": "How to choose",
+            "button_link_2": "shopify://pages/how-to-choose",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "trust": {
+      "type": "trust-bar",
+      "blocks": {
+        "tested": {
+          "type": "item",
+          "settings": {
+            "icon": "check_mark",
+            "heading": "Third-party tested",
+            "text": "Every batch, results on request"
+          }
+        },
+        "shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "heading": "Free shipping over $60",
+            "text": "Flat $9.95 below that"
+          }
+        },
+        "returns": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "heading": "30-day returns",
+            "text": "Even if opened, shipping covered"
+          }
+        },
+        "canada": {
+          "type": "item",
+          "settings": {
+            "icon": "map_pin",
+            "heading": "Ships from Canada",
+            "text": "Real carrier estimates, no surprises"
+          }
+        }
+      },
+      "block_order": [
+        "tested",
+        "shipping",
+        "returns",
+        "canada"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "bestsellers": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bestsellers",
+        "heading_size": "h1",
+        "description": "<p>The products people come back for. Start here if you are not sure where to start.</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "bestsellers",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": true,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "padding_top": 56,
+        "padding_bottom": 40
+      }
+    },
+    "collections": {
+      "type": "collection-list",
+      "blocks": {
+        "daily": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "foundation-daily-essentials"
+          }
+        },
+        "performance": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "performance-fuel-series"
+          }
+        },
+        "calm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "calm-and-sleep"
+          }
+        }
+      },
+      "block_order": [
+        "daily",
+        "performance",
+        "calm"
+      ],
+      "settings": {
+        "title": "Shop by goal",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 56
+      }
+    },
+    "how-we-choose": {
+      "type": "multirow",
+      "blocks": {
+        "forms": {
+          "type": "row",
+          "settings": {
+            "caption": "How we choose",
+            "heading": "Usable forms, research doses",
+            "text": "<p>Chelated minerals, the extract ratios used in the studies, and amounts that match them. If the evidence points to 300 mg, we do not put in 50 mg and list the ingredient anyway.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "tests": {
+          "type": "row",
+          "settings": {
+            "caption": "How we choose",
+            "heading": "Published third-party tests",
+            "text": "<p>Every batch is tested by an independent lab for identity, potency and contaminants. Ask for a result and we will send it. No certificate, no product.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "short-list": {
+          "type": "row",
+          "settings": {
+            "caption": "How we choose",
+            "heading": "A short list, on purpose",
+            "text": "<p>Sixteen products, not a hundred and sixty. Each one has to earn its place, and the How to choose page tells you which one or two you actually need.</p>",
+            "button_label": "How to choose",
+            "button_link": "shopify://pages/how-to-choose"
+          }
+        }
+      },
+      "block_order": [
+        "forms",
+        "tests",
+        "short-list"
+      ],
+      "settings": {
+        "image_height": "small",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "row_color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "stats": {
+      "type": "stats-strip",
+      "blocks": {
+        "tested": {
+          "type": "stat",
+          "settings": {
+            "value": "3rd-party",
+            "label": "Tested, every batch"
+          }
+        },
+        "returns": {
+          "type": "stat",
+          "settings": {
+            "value": "30 days",
+            "label": "Returns, opened or not"
+          }
+        },
+        "shipping": {
+          "type": "stat",
+          "settings": {
+            "value": "$60",
+            "label": "Free shipping threshold"
+          }
+        }
+      },
+      "block_order": [
+        "tested",
+        "returns",
+        "shipping"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "color_scheme": "scheme-3",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "routine": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "The routine actually fits",
+            "quote": "<p>I was taking six things before. Went through the How to choose page and ended up with two. Three months in, I have not missed a day, which is more than I could say for the old shelf of bottles.</p>",
+            "author": "Priya S., Toronto",
+            "verified": true
+          }
+        },
+        "delivery": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "title": "Delivery estimate was accurate",
+            "quote": "<p>Ordered Sunday night. The confirmation said Wednesday to Friday and it came Thursday. Plain packaging, sealed tub. Four stars only because I wish the electrolyte powder came in a bigger size.</p>",
+            "author": "Marc D., Halifax",
+            "verified": true
+          }
+        },
+        "answers": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Answers without the sales pitch",
+            "quote": "<p>I emailed asking whether the adaptogen complex would overlap with my multivitamin. Got a straight answer the next morning, including a suggestion to check with my pharmacist about a medication I take. Did not expect that from a supplement company.</p>",
+            "author": "Janelle R., Calgary",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "routine",
+        "delivery",
+        "answers"
+      ],
+      "settings": {
+        "eyebrow": "From customers",
+        "heading": "What people tell us",
+        "heading_size": "h1",
+        "subheading": "<p>Real orders, quoted with permission. We do not edit out the four-star ones.</p>",
+        "verified_label": "Verified order",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "comparison": {
+      "type": "comparison-table",
+      "blocks": {
+        "amounts": {
+          "type": "row",
+          "settings": {
+            "feature": "Amounts on the label",
+            "us": true,
+            "us_text": "Every ingredient, every dose",
+            "them": false,
+            "them_text": "Proprietary blends"
+          }
+        },
+        "tests": {
+          "type": "row",
+          "settings": {
+            "feature": "Third-party test results",
+            "us": true,
+            "us_text": "Sent on request, every batch",
+            "them": false,
+            "them_text": "Rarely published"
+          }
+        },
+        "returns": {
+          "type": "row",
+          "settings": {
+            "feature": "Returns",
+            "us": true,
+            "us_text": "30 days, even if opened",
+            "them": false,
+            "them_text": "Unopened only, or store credit"
+          }
+        },
+        "subscription": {
+          "type": "row",
+          "settings": {
+            "feature": "Subscriptions",
+            "us": true,
+            "us_text": "Optional, cancel any time",
+            "them": false,
+            "them_text": "Best price only with auto-ship"
+          }
+        },
+        "delivery": {
+          "type": "row",
+          "settings": {
+            "feature": "Delivery estimates",
+            "us": true,
+            "us_text": "Real dates from the carrier",
+            "them": false,
+            "them_text": "Countdown timers and stock counters"
+          }
+        }
+      },
+      "block_order": [
+        "amounts",
+        "tests",
+        "returns",
+        "subscription",
+        "delivery"
+      ],
+      "settings": {
+        "heading": "What is different here",
+        "heading_size": "h1",
+        "subheading": "<p>None of this is complicated. It is just uncommon.</p>",
+        "us_label": "",
+        "them_label": "Typical supplement brand",
+        "button_label": "Shop bestsellers",
+        "button_link": "shopify://collections/bestsellers",
+        "color_scheme": "scheme-2",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "start": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which product should I start with?",
+            "icon": "none",
+            "row_content": "<p>If you are new to supplements, start with one. For most people that is a multivitamin or a hydration powder, depending on what is missing from your day. The How to choose page walks through it in a few minutes, and you can email us if you are still unsure.</p>",
+            "page": ""
+          }
+        },
+        "medication": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I take medication. Is this safe for me?",
+            "icon": "none",
+            "row_content": "<p>We cannot answer that for you. Some ingredients, including ashwagandha and turmeric, can interact with medications. Please check with your pharmacist or doctor before starting anything new, and bring the label with you.</p>",
+            "page": ""
+          }
+        },
+        "notice": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will I notice anything?",
+            "icon": "none",
+            "row_content": "<p>It depends on the product and on you. Electrolytes work within the hour. Creatine takes a few weeks to build up. Multivitamins and adaptogens are usually a matter of weeks, and some people notice nothing obvious, which is normal. We do not promise a feeling.</p>",
+            "page": ""
+          }
+        },
+        "vegan": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are your products vegan and gluten-free?",
+            "icon": "none",
+            "row_content": "<p>Most are. Each product page lists this under What's in it, and the label is always the final word. The whey protein is not vegan; the plant protein is.</p>",
+            "page": ""
+          }
+        },
+        "storage": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I store them?",
+            "icon": "none",
+            "row_content": "<p>Cool, dry, out of direct sun, lid closed. The bathroom cabinet is usually too humid for powders. Capsules are fine in a kitchen cupboard.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "start",
+        "medication",
+        "notice",
+        "vegan",
+        "storage"
+      ],
+      "settings": {
+        "caption": "Common questions",
+        "heading": "Before you order",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "row",
+        "container_color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Short emails, no hype",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Restock notices and what the research actually says. A few times a month, and you can leave with one click.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form"
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust",
+    "bestsellers",
+    "collections",
+    "how-we-choose",
+    "stats",
+    "testimonials",
+    "comparison",
+    "faq",
+    "newsletter"
+  ]
+}

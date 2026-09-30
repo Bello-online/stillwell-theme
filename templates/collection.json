@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    },
+    "trust": {
+      "type": "trust-bar",
+      "blocks": {
+        "tested": {
+          "type": "item",
+          "settings": {
+            "icon": "check_mark",
+            "heading": "Third-party tested",
+            "text": "Every batch, results on request"
+          }
+        },
+        "shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "heading": "Free shipping over $60",
+            "text": "Flat $9.95 below that"
+          }
+        },
+        "returns": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "heading": "30-day returns",
+            "text": "Even if opened, shipping covered"
+          }
+        },
+        "canada": {
+          "type": "item",
+          "settings": {
+            "icon": "map_pin",
+            "heading": "Ships from Canada",
+            "text": "Real carrier estimates, no surprises"
+          }
+        }
+      },
+      "block_order": [
+        "tested",
+        "shipping",
+        "returns",
+        "canada"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "trust"
+  ]
+}
