@@ -193,6 +193,7 @@
         "forms": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/stillwell-forms.jpg",
             "caption": "How we choose",
             "heading": "Usable forms, research doses",
             "text": "<p>Chelated minerals, the extract ratios used in the studies, and amounts that match them. If the evidence points to 300 mg, we do not put in 50 mg and list the ingredient anyway.</p>",
@@ -203,6 +204,7 @@
         "tests": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/stillwell-tests.jpg",
             "caption": "How we choose",
             "heading": "Published third-party tests",
             "text": "<p>Every batch is tested by an independent lab for identity, potency and contaminants. Ask for a result and we will send it. No certificate, no product.</p>",
@@ -213,6 +215,7 @@
         "short-list": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/stillwell-shortlist.jpg",
             "caption": "How we choose",
             "heading": "A short list, on purpose",
             "text": "<p>Sixteen products, not a hundred and sixty. Each one has to earn its place, and the How to choose page tells you which one or two you actually need.</p>",
