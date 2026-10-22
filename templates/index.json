@@ -3,7 +3,7 @@
     "hero": {
       "type": "perch-hero",
       "settings": {
-        "image": "shopify://shop_images/perch-hero-4.jpg",
+        "image": "shopify://shop_images/perch-hero-5.jpg",
         "overlay_opacity": 60,
         "content_position": "left",
         "eyebrow": "Induction speaker stand",
@@ -203,7 +203,7 @@
         "bedside": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-bedside-3.jpg",
+            "image": "shopify://shop_images/perch-scene-bedside-4.jpg",
             "room": "Bedside",
             "heading": "Film in bed, light off at the end",
             "text": "Lean the phone on the stand and induction picks up the sound. The ring doubles as a night light until you tap it off.",
@@ -214,7 +214,7 @@
         "desk": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-desk-3.jpg",
+            "image": "shopify://shop_images/perch-scene-desk-4.jpg",
             "room": "Desk",
             "heading": "A speaker that holds your second screen",
             "text": "Phone upright for calls and notifications, music over Bluetooth from the laptop. The glow is easier on the eyes than an overhead bulb.",
@@ -236,7 +236,7 @@
         "movie": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-movie-3.jpg",
+            "image": "shopify://shop_images/perch-scene-movie-4.jpg",
             "room": "Movie night",
             "heading": "Louder than the phone, smaller than a soundbar",
             "text": "Put it on the coffee table and the whole sofa hears it. Pack it flat and take it to the cottage.",

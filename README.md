@@ -34,7 +34,7 @@ Shared conversion layer (identical across the three stores): `trust-bar`, `testi
 
 ## Images
 
-Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero-4.jpg`, `perch-scene-bedside-3.jpg`, `perch-scene-desk-3.jpg`, `perch-scene-tablet-2.jpg`, `perch-scene-movie-3.jpg`, `perch-studio-3.jpg`. All product imagery is built from the supplier's real renders: the background-removed product cutout is composited into AI-generated empty room backgrounds (media/perch/bg/) with shadows and LED light spill, plus one cropped supplier lifestyle render for the tablet scene; sources live in the workspace under `media/perch/`. Earlier AI-generated images showed the wrong product shape and were retired.
+Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero-5.jpg`, `perch-scene-bedside-4.jpg`, `perch-scene-desk-4.jpg`, `perch-scene-tablet-2.jpg`, `perch-scene-movie-4.jpg`, `perch-studio-4.jpg`. All product imagery is built from the supplier's real renders: the background-removed product cutout is composited into AI-generated empty room backgrounds (media/perch/bg/) with feathered de-fringed edges, ambient colour grading, LED bloom, shadows, light spill and film grain (scratchpad script perch_composite2.py; keep a copy in media/perch/), plus one cropped supplier lifestyle render for the tablet scene; sources live in the workspace under `media/perch/`. Earlier AI-generated images showed the wrong product shape and were retired.
 
 ## Validation rules Shopify enforces on sync
 
