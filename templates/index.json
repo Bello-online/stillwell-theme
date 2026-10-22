@@ -3,7 +3,7 @@
     "hero": {
       "type": "perch-hero",
       "settings": {
-        "image": "shopify://shop_images/perch-hero-2.jpg",
+        "image": "shopify://shop_images/perch-hero-3.jpg",
         "overlay_opacity": 60,
         "content_position": "left",
         "eyebrow": "Induction speaker stand",
