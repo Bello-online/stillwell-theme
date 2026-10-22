@@ -10,13 +10,13 @@
 @media screen and (min-width: 750px) {
   .perch-scenes {
     --perch-scenes-gap: 2rem;
-    --perch-scenes-visible: 2.2;
+    --perch-scenes-visible: 1.6;
   }
 }
 
 @media screen and (min-width: 990px) {
   .perch-scenes {
-    --perch-scenes-visible: 3;
+    --perch-scenes-visible: 2;
   }
 }
 
@@ -107,7 +107,7 @@
   flex-direction: column;
   justify-content: flex-end;
   min-height: 0;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: var(--media-radius, 1.2rem);
   background: rgba(var(--color-foreground), 0.04);

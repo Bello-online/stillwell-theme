@@ -3,7 +3,7 @@
     "hero": {
       "type": "perch-hero",
       "settings": {
-        "image": "shopify://shop_images/perch-hero.jpg",
+        "image": "shopify://shop_images/perch-hero-2.jpg",
         "overlay_opacity": 60,
         "content_position": "left",
         "eyebrow": "Induction speaker stand",
@@ -59,7 +59,12 @@
           }
         }
       },
-      "block_order": ["shipping", "returns", "warranty", "checkout"],
+      "block_order": [
+        "shipping",
+        "returns",
+        "warranty",
+        "checkout"
+      ],
       "settings": {
         "color_scheme": "scheme-2",
         "padding_top": 24,
@@ -106,7 +111,12 @@
           }
         }
       },
-      "block_order": ["induction", "bluetooth", "stand", "light"],
+      "block_order": [
+        "induction",
+        "bluetooth",
+        "stand",
+        "light"
+      ],
       "settings": {
         "anchor": "how-it-works",
         "eyebrow": "How it works",
@@ -163,7 +173,15 @@
           }
         }
       },
-      "block_order": ["eyebrow", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "summary"],
+      "block_order": [
+        "eyebrow",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "summary"
+      ],
       "settings": {
         "product": "perch-speaker-stand-with-ambient-light",
         "color_scheme": "scheme-2",
@@ -185,10 +203,10 @@
         "bedside": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-bedside.jpg",
+            "image": "shopify://shop_images/perch-scene-bedside-2.jpg",
             "room": "Bedside",
             "heading": "Film in bed, light off at the end",
-            "text": "Lean the phone on the stand, induction picks up the sound. The ring doubles as a night light until you tap it off.",
+            "text": "Lean the phone on the stand and induction picks up the sound. The ring doubles as a night light until you tap it off.",
             "link_label": "Buy Perch",
             "link": "shopify://products/perch-speaker-stand-with-ambient-light"
           }
@@ -196,7 +214,7 @@
         "desk": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-desk.jpg",
+            "image": "shopify://shop_images/perch-scene-desk-2.jpg",
             "room": "Desk",
             "heading": "A speaker that holds your second screen",
             "text": "Phone upright for calls and notifications, music over Bluetooth from the laptop. The glow is easier on the eyes than an overhead bulb.",
@@ -204,33 +222,38 @@
             "link": "shopify://products/perch-speaker-stand-with-ambient-light"
           }
         },
-        "kitchen": {
+        "tablet": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-kitchen.jpg",
-            "room": "Kitchen",
-            "heading": "Recipes at eye level, hands free",
-            "text": "The foot opens wide enough for a tablet. No outlet needed on the counter, the battery runs the evening.",
+            "image": "shopify://shop_images/perch-scene-tablet-2.jpg",
+            "room": "Tablet",
+            "heading": "A full-size tablet, hands free",
+            "text": "Open the foot and the stand takes a tablet in landscape. Recipes in the kitchen, a film on the balcony, no outlet needed.",
             "link_label": "Buy Perch",
             "link": "shopify://products/perch-speaker-stand-with-ambient-light"
           }
         },
-        "movie": {
+        "devices": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-movie.jpg",
-            "room": "Movie night",
-            "heading": "Louder than the phone, smaller than a soundbar",
-            "text": "Put it on the coffee table and the whole sofa hears it. Pack it flat and take it to the cottage.",
+            "image": "shopify://shop_images/perch-scene-devices-2.jpg",
+            "room": "Any device",
+            "heading": "Phone by induction, everything else by Bluetooth",
+            "text": "Laptop, tablet or a second phone pair over Bluetooth 5.4. Your own phone just leans on the stand.",
             "link_label": "Buy Perch",
             "link": "shopify://products/perch-speaker-stand-with-ambient-light"
           }
         }
       },
-      "block_order": ["bedside", "desk", "kitchen", "movie"],
+      "block_order": [
+        "bedside",
+        "desk",
+        "tablet",
+        "devices"
+      ],
       "settings": {
         "heading": "Where it ends up living",
-        "subheading": "<p>The same stand, four rooms. It weighs under half a kilo, so it moves with you.</p>",
+        "subheading": "<p>The same stand, four places. It weighs under half a kilo, so it moves with you.</p>",
         "color_scheme": "scheme-1",
         "padding_top": 48,
         "padding_bottom": 48
@@ -309,7 +332,16 @@
           }
         }
       },
-      "block_order": ["bluetooth", "battery", "angle", "light", "weight", "box", "colour", "cert"],
+      "block_order": [
+        "bluetooth",
+        "battery",
+        "angle",
+        "light",
+        "weight",
+        "box",
+        "colour",
+        "cert"
+      ],
       "settings": {
         "heading": "The numbers",
         "intro": "<p>Everything we know about the hardware, in one place. If a figure is not here, ask us before you order rather than guessing.</p>",
@@ -354,7 +386,12 @@
           }
         }
       },
-      "block_order": ["battery", "angle", "bluetooth", "returns"],
+      "block_order": [
+        "battery",
+        "angle",
+        "bluetooth",
+        "returns"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h2",
@@ -397,7 +434,11 @@
           }
         }
       },
-      "block_order": ["bedside", "tablet", "delivery"],
+      "block_order": [
+        "bedside",
+        "tablet",
+        "delivery"
+      ],
       "settings": {
         "eyebrow": "From customers",
         "heading": "What people tell us",
@@ -464,7 +505,13 @@
           }
         }
       },
-      "block_order": ["devices", "pairing", "tablet", "power", "light"],
+      "block_order": [
+        "devices",
+        "pairing",
+        "tablet",
+        "power",
+        "light"
+      ],
       "settings": {
         "heading": "Perch, versus buying the pieces",
         "heading_size": "h1",
@@ -536,7 +583,14 @@
           }
         }
       },
-      "block_order": ["induction", "tablet", "battery", "light", "delivery", "returns"],
+      "block_order": [
+        "induction",
+        "tablet",
+        "battery",
+        "light",
+        "delivery",
+        "returns"
+      ],
       "settings": {
         "caption": "Common questions",
         "heading": "Before you order",
@@ -573,7 +627,11 @@
           "settings": {}
         }
       },
-      "block_order": ["heading", "paragraph", "email_form"],
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
       "settings": {
         "color_scheme": "scheme-4",
         "full_width": true,
@@ -582,5 +640,17 @@
       }
     }
   },
-  "order": ["hero", "trust", "features", "product", "scenes", "specs", "stats", "testimonials", "comparison", "faq", "newsletter"]
+  "order": [
+    "hero",
+    "trust",
+    "features",
+    "product",
+    "scenes",
+    "specs",
+    "stats",
+    "testimonials",
+    "comparison",
+    "faq",
+    "newsletter"
+  ]
 }

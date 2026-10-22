@@ -20,7 +20,7 @@ Fonts: Archivo 700 for headings, Inter 400 for body. Radii 8 to 12 px. One accen
 
 - `sections/perch-hero.liquid` + `assets/section-perch-hero.css`: full-bleed image with gradient overlay, eyebrow, headline, price-aware primary button (reads the product price), trust line.
 - `sections/perch-features.liquid` + `assets/section-perch-features.css`: numbered feature cards with stroke icons from `snippets/icon-perch.liquid`; has an anchor id so the hero button can scroll to it.
-- `sections/perch-scenes.liquid` + `assets/section-perch-scenes.css` + `assets/perch-scenes.js`: horizontal scroll-snap track of 4:5 scene cards (Bedside, Desk, Kitchen, Movie night).
+- `sections/perch-scenes.liquid` + `assets/section-perch-scenes.css` + `assets/perch-scenes.js`: horizontal scroll-snap track of 3:2 scene cards (Bedside, Desk, Tablet, Any device).
 - `sections/spec-sheet.liquid` + `assets/section-spec-sheet.css`: spec cards plus a "What's in the box" panel.
 
 Shared conversion layer (identical across the three stores): `trust-bar`, `testimonials`, `comparison-table`, `stats-strip` sections, `sticky-atc` and `free-shipping-bar` snippets, `assets/cro.css`. Brand-only tweaks live in `assets/custom.css`.
@@ -34,7 +34,7 @@ Shared conversion layer (identical across the three stores): `trust-bar`, `testi
 
 ## Images
 
-Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero.jpg`, `perch-scene-bedside.jpg`, `perch-scene-desk.jpg`, `perch-scene-kitchen.jpg`, `perch-scene-movie.jpg`, `perch-studio.jpg`. Sources live in the workspace under `media/perch/`.
+Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero-2.jpg`, `perch-scene-bedside-2.jpg`, `perch-scene-desk-2.jpg`, `perch-scene-tablet-2.jpg`, `perch-scene-devices-2.jpg`, `perch-studio-2.jpg`. All product imagery is built from the supplier's real renders (cutout composited on dark backgrounds, lifestyle shots cropped to 3:2); sources live in the workspace under `media/perch/`. Earlier AI-generated images showed the wrong product shape and were retired.
 
 ## Validation rules Shopify enforces on sync
 
