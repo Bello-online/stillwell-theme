@@ -15,7 +15,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Help",
-            "menu": "footer"
+            "menu": "perch-footer"
           }
         },
         "shipping-note": {
