@@ -1,21 +1,28 @@
-/* Stillwell brand refinements. Loaded after base.css and cro.css from layout/theme.liquid.
+/* Perch brand refinements. Loaded after base.css and cro.css from layout/theme.liquid.
    Palette, fonts, radii and card styles live in config/settings_data.json; this file only
-   nudges what the theme settings cannot reach. */
+   nudges what the theme settings cannot reach. Dark UI, one violet accent. */
 
-/* Headings: a little tighter, a little calmer */
-h1, h2, h3, .h0, .h1, .h2, .h3 {
-  letter-spacing: -0.01em;
+:root {
+  --perch-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.hxl, .hxxl {
+
+/* Headings: tight, confident */
+h1, h2, h3, .h0, .h1, .h2, .h3 {
   letter-spacing: -0.02em;
 }
+.hxl, .hxxl {
+  letter-spacing: -0.03em;
+}
 
-/* Buttons: a touch of tracking, comfortable touch targets */
+/* Buttons: bold, glowing primary */
 .button,
 .shopify-challenge__button,
 .customer button {
-  letter-spacing: 0.04em;
-  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+.button:not(.button--secondary):not(.button--tertiary):not(.shopify-payment-button__button) {
+  box-shadow: 0 0.6rem 2rem rgba(var(--color-button), 0.25);
 }
 .product-form__submit,
 .product-form__buttons .shopify-payment-button__button,
@@ -24,116 +31,84 @@ h1, h2, h3, .h0, .h1, .h2, .h3 {
   min-height: 4.8rem;
 }
 
-/* Announcement bar: a little more presence without shouting */
+/* Announcement bar */
 .announcement-bar__message {
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-/* Hero: give the dark text box room to breathe when no image is set */
-.banner__box {
-  padding: 4rem 3rem;
+/* Header: thin line under the sticky header */
+.header-wrapper {
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
-@media screen and (min-width: 750px) {
-  .banner__box {
-    padding: 5.6rem 6rem;
-  }
+
+/* Product summary list used in custom_liquid blocks on the product and featured-product sections */
+.perch-summary {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.6rem 0 0.4rem;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
-.banner__text {
-  max-width: 62ch;
-  margin-left: auto;
-  margin-right: auto;
+.perch-summary li {
+  position: relative;
+  padding-left: 2.6rem;
+}
+.perch-summary li::before {
+  content: '';
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: rgb(var(--color-button));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12 3 3 5-6'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12 3 3 5-6'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* Product media: soft edge */
+.product__media-wrapper .product__media img,
+.product__media-item img {
+  border-radius: var(--media-radius);
 }
 
 /* Cards: subtle lift on hover, no bounce */
 .card-wrapper .card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s var(--perch-ease), box-shadow 0.25s var(--perch-ease);
 }
 .card-wrapper:hover .card {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(var(--color-shadow), 0.08);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
 }
 
-/* Stats strip: gold values on the deep green band (scheme-3 button colour is gold) */
+/* Stats strip on the light band: violet values */
 .color-scheme-3 .stats__value {
-  color: rgb(var(--color-button));
+  color: #6a5ae0;
 }
 
-/* Trust bar: tie the icon colour to the button colour */
-.trust-bar__icon {
-  color: rgb(var(--color-button));
+/* Comparison table: accent the Perch column */
+.comparison__us-head {
+  background: rgba(var(--color-button), 0.18);
 }
 
-/* Product page: calmer eyebrow, clearer collapsible tab titles */
-.product__text.caption-with-letter-spacing {
-  letter-spacing: 0.12em;
-  font-size: 1.1rem;
-  opacity: 0.8;
-}
-.product__accordion .accordion__title {
-  font-weight: 600;
+/* Testimonial cards sit a little lighter on the dark base */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Footer: let Lora carry the brand headline at a lighter weight */
-.footer-block__brand-info .h2 {
-  font-weight: 500;
+/* Accordion rows: more air */
+.accordion summary {
+  padding-block: 1.6rem;
 }
 
-/* Product page: editorial title, quiet price, roomier info column */
-.product__title h1,
-.product__title .h1 {
-  font-family: var(--font-heading-family);
-  font-size: clamp(2.8rem, 3.5vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-}
-.product__info-container .price,
-.product__info-container .price .price-item {
-  font-size: 2rem;
-  font-variant-numeric: tabular-nums;
-}
-.product__info-container .price--on-sale .price-item--regular {
-  font-size: 1.5rem;
-}
-.product__info-container {
-  max-width: 56rem;
-}
-@media screen and (min-width: 990px) {
-  .product__info-wrapper {
-    padding-left: 5rem;
-  }
-  .product--right .product__info-wrapper {
-    padding-left: 0;
-    padding-right: 5rem;
-  }
+/* Footer */
+.footer {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
-/* Variant pills: match the button radius */
-.product-form__input--pill input[type='radio'] + label {
-  border-radius: 0.6rem;
-}
-
-/* Collapsible tabs: hairline dividers only, no boxed borders */
-.product__accordion .accordion {
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.14);
-  border-bottom: 0;
-  margin-top: 0;
-}
-.product__accordion .accordion:last-of-type,
-.product__accordion:last-of-type .accordion {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.14);
-}
-.product__accordion .accordion summary {
-  padding: 1.8rem 0;
-}
-.product__accordion .accordion__content {
-  padding-bottom: 1.8rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card-wrapper .card,
-  .card-wrapper:hover .card {
-    transition: none;
-    transform: none;
-  }
+/* Focus rings in the accent colour */
+*:focus-visible {
+  outline-color: rgb(var(--color-button));
 }

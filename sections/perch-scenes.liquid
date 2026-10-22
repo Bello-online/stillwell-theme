@@ -1,0 +1,193 @@
+{{ 'section-perch-scenes.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'perch-scenes.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="perch-scenes color-{{ section.settings.color_scheme }} gradient" data-perch-scenes>
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="perch-scenes__header">
+      <div class="perch-scenes__copy">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="perch-scenes__heading h2" id="PerchScenes-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <div class="perch-scenes__subheading rte">{{ section.settings.subheading }}</div>
+        {%- endif -%}
+      </div>
+      <div class="perch-scenes__controls">
+        <button type="button" class="perch-scenes__button" data-prev aria-label="Previous scene" aria-controls="PerchScenesTrack-{{ section.id }}">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 5-7 7 7 7"/></svg>
+        </button>
+        <button type="button" class="perch-scenes__button" data-next aria-label="Next scene" aria-controls="PerchScenesTrack-{{ section.id }}">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <ul
+      class="perch-scenes__track list-unstyled"
+      id="PerchScenesTrack-{{ section.id }}"
+      role="list"
+      aria-labelledby="PerchScenes-{{ section.id }}"
+      data-track
+    >
+      {%- for block in section.blocks -%}
+        <li class="perch-scenes__card" data-card {{ block.shopify_attributes }}>
+          <div class="perch-scenes__media{% if block.settings.image == blank %} perch-scenes__media--placeholder{% endif %}">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 1100
+                | image_tag:
+                  widths: '375, 550, 750, 1100',
+                  sizes: '(min-width: 990px) 44rem, (min-width: 750px) 33vw, 87vw',
+                  loading: 'lazy',
+                  class: 'perch-scenes__img'
+              }}
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'perch-scenes__img placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="perch-scenes__shade" aria-hidden="true"></div>
+          {%- if block.settings.room != blank -%}
+            <span class="perch-scenes__room">{{ block.settings.room | escape }}</span>
+          {%- endif -%}
+          <div class="perch-scenes__body">
+            {%- if block.settings.heading != blank -%}
+              <h3 class="perch-scenes__title">{{ block.settings.heading | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="perch-scenes__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+              <a class="perch-scenes__link" href="{{ block.settings.link }}">
+                {{- block.settings.link_label | escape -}}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            {%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Use scenes",
+  "tag": "section",
+  "class": "section section-perch-scenes",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Where it ends up living"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>The same stand, four rooms. It weighs under half a kilo, so it moves with you.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "scene",
+      "name": "Scene",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Portrait, 4:5. 1100 x 1375 px recommended."
+        },
+        {
+          "type": "text",
+          "id": "room",
+          "label": "Room label",
+          "default": "Bedside"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Film in bed, light off at the end"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Lean the phone on the stand and induction picks up the sound. The ring doubles as a night light."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "default": "Buy Perch"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Use scenes",
+      "blocks": [
+        { "type": "scene" },
+        { "type": "scene", "settings": { "room": "Desk", "heading": "A speaker that holds your second screen", "text": "Phone upright for calls, music over Bluetooth from the laptop.", "link_label": "Buy Perch" } },
+        { "type": "scene", "settings": { "room": "Kitchen", "heading": "Recipes at eye level, hands free", "text": "The foot opens wide enough for a tablet. No outlet needed on the counter.", "link_label": "Buy Perch" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

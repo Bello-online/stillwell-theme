@@ -1,0 +1,127 @@
+/* Perch features: numbered feature cards in a responsive grid. */
+
+.perch-features__header {
+  max-width: 68rem;
+  margin-bottom: 3.2rem;
+}
+
+.perch-features__eyebrow {
+  margin: 0 0 1rem;
+  color: rgb(var(--color-button));
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.perch-features__heading {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.perch-features__subheading {
+  margin-top: 1.2rem;
+  color: rgba(var(--color-foreground), 0.8);
+}
+
+.perch-features__subheading p {
+  margin: 0;
+}
+
+.perch-features__grid {
+  display: grid;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 1fr;
+  counter-reset: perch-feature;
+}
+
+@media screen and (min-width: 600px) {
+  .perch-features__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .perch-features__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .perch-features__grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.perch-features__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 2.4rem;
+  border-radius: var(--text-boxes-radius, 1.2rem);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.perch-features__card:hover {
+  border-color: rgba(var(--color-button), 0.5);
+  transform: translateY(-2px);
+}
+
+.perch-features__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.perch-features__icon {
+  display: inline-flex;
+  width: 4.4rem;
+  height: 4.4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: rgba(var(--color-button), 0.14);
+  color: rgb(var(--color-button));
+}
+
+.perch-features__icon svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.perch-features__number {
+  font-family: var(--font-heading-family);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(var(--color-foreground), 0.4);
+}
+
+.perch-features__title {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.perch-features__text {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.82);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.perch-features__detail {
+  margin: 0.4rem 0 0;
+  color: rgba(var(--color-foreground), 0.6);
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .perch-features__card {
+    transition: none;
+  }
+  .perch-features__card:hover {
+    transform: none;
+  }
+}

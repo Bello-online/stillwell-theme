@@ -1,42 +1,37 @@
 {
   "sections": {
     "hero": {
-      "type": "stillwell-hero",
+      "type": "perch-hero",
       "settings": {
-        "image": "shopify://shop_images/stillwell-hero.jpg",
-        "image_position": "right",
-        "eyebrow": "Supplements, chosen carefully",
-        "heading": "Fewer bottles. Better ones.",
-        "text": "<p>Stillwell is a short list of supplements chosen for usable forms and research doses. Every batch is third-party tested, every label lists the full amounts, and everything ships from Canada.</p>",
-        "button_label": "Shop bestsellers",
-        "button_link": "shopify://collections/bestsellers",
-        "button_label_2": "How to choose",
-        "button_link_2": "shopify://pages/how-to-choose",
-        "trust_1": "Third-party tested",
-        "trust_2": "30-day returns, even opened",
-        "trust_3": "Free shipping over $60",
+        "image": "shopify://shop_images/perch-hero.jpg",
+        "overlay_opacity": 60,
+        "content_position": "left",
+        "eyebrow": "Induction speaker stand",
+        "heading": "Set your phone down. The sound comes on.",
+        "text": "<p>Perch is a speaker and a stand in one. Rest your phone or tablet against it and the audio plays through the speaker, no pairing. Bluetooth 5.4 when you want it, a 1500 mAh battery when there is no outlet, and a ring of light you can switch off.</p>",
+        "product": "perch-speaker-stand-with-ambient-light",
+        "button_label": "Buy Perch",
+        "show_price": true,
+        "button_link": "",
+        "button_label_2": "How it works",
+        "button_link_2": "/#how-it-works",
+        "trust_1": "Free shipping in Canada",
+        "trust_2": "30-day returns",
+        "trust_3": "12-month warranty",
         "color_scheme": "scheme-1",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     },
     "trust": {
       "type": "trust-bar",
       "blocks": {
-        "tested": {
-          "type": "item",
-          "settings": {
-            "icon": "check_mark",
-            "heading": "Third-party tested",
-            "text": "Every batch, results on request"
-          }
-        },
         "shipping": {
           "type": "item",
           "settings": {
             "icon": "truck",
-            "heading": "Free shipping over $60",
-            "text": "Flat $9.95 below that"
+            "heading": "Free shipping",
+            "text": "Every order, tracked, no minimum"
           }
         },
         "returns": {
@@ -44,237 +39,322 @@
           "settings": {
             "icon": "return",
             "heading": "30-day returns",
-            "text": "Even if opened, shipping covered"
+            "text": "Send it back, no explanation needed"
           }
         },
-        "canada": {
+        "warranty": {
           "type": "item",
           "settings": {
-            "icon": "map_pin",
-            "heading": "Ships from Canada",
-            "text": "Real carrier estimates, no surprises"
+            "icon": "check_mark",
+            "heading": "12-month warranty",
+            "text": "Replacement on defects, keep the old one"
+          }
+        },
+        "checkout": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "heading": "Secure checkout",
+            "text": "Shop Pay, Apple Pay, PayPal"
           }
         }
       },
-      "block_order": [
-        "tested",
-        "shipping",
-        "returns",
-        "canada"
-      ],
+      "block_order": ["shipping", "returns", "warranty", "checkout"],
       "settings": {
         "color_scheme": "scheme-2",
         "padding_top": 24,
         "padding_bottom": 24
       }
     },
-    "routine": {
-      "type": "routine-builder",
+    "features": {
+      "type": "perch-features",
       "blocks": {
-        "morning": {
-          "type": "slot",
+        "induction": {
+          "type": "feature",
           "settings": {
-            "time_label": "Morning",
-            "heading": "Cover the basics",
-            "text": "One capsule with breakfast. Vitamins and minerals in the forms your body can use, plus adaptogens at the doses used in the studies.",
-            "collection": "foundation-daily-essentials",
-            "product": "daily-multivitamin-capsules-with-adaptogens",
-            "button_label": "Shop daily essentials"
+            "icon": "induction",
+            "heading": "Induction mode",
+            "text": "Rest your phone against the pad with its speaker facing it. The audio plays through Perch straight away, with no pairing and no app.",
+            "detail": "Works with any phone that has a speaker."
           }
         },
-        "training": {
-          "type": "slot",
+        "bluetooth": {
+          "type": "feature",
           "settings": {
-            "time_label": "After training",
-            "heading": "Recover properly",
-            "text": "Creatine and electrolytes, micronized so they mix into whatever you are already drinking. No proprietary blends.",
-            "collection": "performance-fuel-series",
-            "product": "creatine-performance-powder-micronized",
-            "button_label": "Shop performance"
+            "icon": "bluetooth",
+            "heading": "Bluetooth 5.4",
+            "text": "Pair once for a stable connection from across the room, from a phone, tablet or laptop.",
+            "detail": "Induction and Bluetooth, your choice each time."
           }
         },
-        "evening": {
-          "type": "slot",
+        "stand": {
+          "type": "feature",
           "settings": {
-            "time_label": "Evening",
-            "heading": "Wind down",
-            "text": "Ashwagandha and magnesium to support a calmer evening. Check with your pharmacist if you take medication.",
-            "collection": "calm-and-sleep",
-            "product": "adaptogen-complex-with-calming-ashwagandha",
-            "button_label": "Shop calm and sleep"
+            "icon": "angle",
+            "heading": "Stand for phone or tablet",
+            "text": "The foot folds out and holds a phone or a tablet at up to 75 degrees. Films, recipes, video calls, live streams.",
+            "detail": "Folds flat to pack."
+          }
+        },
+        "light": {
+          "type": "feature",
+          "settings": {
+            "icon": "light",
+            "heading": "Ambient ring",
+            "text": "A soft gradient of colour around the face that lights a desk or bedside. Turn it off when you want the room dark.",
+            "detail": "1500 mAh battery, charges over USB."
           }
         }
       },
-      "block_order": [
-        "morning",
-        "training",
-        "evening"
-      ],
+      "block_order": ["induction", "bluetooth", "stand", "light"],
       "settings": {
-        "heading": "Build a routine, not a shelf",
-        "subheading": "<p>Most people need one or two things, taken at the right time of day. Pick a slot and start there.</p>",
+        "anchor": "how-it-works",
+        "eyebrow": "How it works",
+        "heading": "One stand. Four jobs.",
+        "subheading": "<p>Perch replaces the speaker, the stand and the bedside light with one small thing that charges over USB.</p>",
+        "columns": 4,
+        "show_numbers": true,
         "color_scheme": "scheme-1",
         "card_color_scheme": "scheme-2",
-        "padding_top": 56,
-        "padding_bottom": 40
+        "padding_top": 64,
+        "padding_bottom": 48
       }
     },
-    "bestsellers": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Bestsellers",
-        "heading_size": "h1",
-        "description": "<p>The products people come back for. Start here if you are not sure where to start.</p>",
-        "show_description": true,
-        "description_style": "body",
-        "collection": "bestsellers",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "outline",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": true,
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "padding_top": 56,
-        "padding_bottom": 40
-      }
-    },
-    "collections": {
-      "type": "collection-list",
+    "product": {
+      "type": "featured-product",
       "blocks": {
-        "daily": {
-          "type": "featured_collection",
+        "eyebrow": {
+          "type": "text",
           "settings": {
-            "collection": "foundation-daily-essentials"
+            "text": "Induction speaker stand · Black",
+            "text_style": "uppercase"
           }
         },
-        "performance": {
-          "type": "featured_collection",
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
           "settings": {
-            "collection": "performance-fuel-series"
+            "picker_type": "button",
+            "swatch_shape": "none"
           }
         },
-        "calm": {
-          "type": "featured_collection",
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
           "settings": {
-            "collection": "calm-and-sleep"
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "summary": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<ul class=\"perch-summary list-unstyled\"><li>Induction mode plays your phone's audio with no pairing</li><li>Bluetooth 5.4 for phones, tablets and laptops</li><li>Folding stand holds a phone or tablet at up to 75 degrees</li><li>Gradient light ring with an off setting</li><li>1500 mAh battery, USB charging cable included</li></ul>"
           }
         }
       },
-      "block_order": [
-        "daily",
-        "performance",
-        "calm"
-      ],
+      "block_order": ["eyebrow", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "summary"],
       "settings": {
-        "title": "Shop by goal",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
+        "product": "perch-speaker-stand-with-ambient-light",
+        "color_scheme": "scheme-2",
+        "secondary_background": false,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "scenes": {
+      "type": "perch-scenes",
+      "blocks": {
+        "bedside": {
+          "type": "scene",
+          "settings": {
+            "image": "shopify://shop_images/perch-scene-bedside.jpg",
+            "room": "Bedside",
+            "heading": "Film in bed, light off at the end",
+            "text": "Lean the phone on the stand, induction picks up the sound. The ring doubles as a night light until you tap it off.",
+            "link_label": "Buy Perch",
+            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
+          }
+        },
+        "desk": {
+          "type": "scene",
+          "settings": {
+            "image": "shopify://shop_images/perch-scene-desk.jpg",
+            "room": "Desk",
+            "heading": "A speaker that holds your second screen",
+            "text": "Phone upright for calls and notifications, music over Bluetooth from the laptop. The glow is easier on the eyes than an overhead bulb.",
+            "link_label": "Buy Perch",
+            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
+          }
+        },
+        "kitchen": {
+          "type": "scene",
+          "settings": {
+            "image": "shopify://shop_images/perch-scene-kitchen.jpg",
+            "room": "Kitchen",
+            "heading": "Recipes at eye level, hands free",
+            "text": "The foot opens wide enough for a tablet. No outlet needed on the counter, the battery runs the evening.",
+            "link_label": "Buy Perch",
+            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
+          }
+        },
+        "movie": {
+          "type": "scene",
+          "settings": {
+            "image": "shopify://shop_images/perch-scene-movie.jpg",
+            "room": "Movie night",
+            "heading": "Louder than the phone, smaller than a soundbar",
+            "text": "Put it on the coffee table and the whole sofa hears it. Pack it flat and take it to the cottage.",
+            "link_label": "Buy Perch",
+            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
+          }
+        }
+      },
+      "block_order": ["bedside", "desk", "kitchen", "movie"],
+      "settings": {
+        "heading": "Where it ends up living",
+        "subheading": "<p>The same stand, four rooms. It weighs under half a kilo, so it moves with you.</p>",
         "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 40,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "specs": {
+      "type": "spec-sheet",
+      "blocks": {
+        "bluetooth": {
+          "type": "spec",
+          "settings": {
+            "icon": "bluetooth",
+            "label": "Wireless",
+            "value": "Bluetooth 5.4",
+            "note": "Plus induction mode, no pairing"
+          }
+        },
+        "battery": {
+          "type": "spec",
+          "settings": {
+            "icon": "battery",
+            "label": "Battery",
+            "value": "1500 mAh",
+            "note": "Rechargeable, cable included"
+          }
+        },
+        "angle": {
+          "type": "spec",
+          "settings": {
+            "icon": "angle",
+            "label": "Stand angle",
+            "value": "Up to 75 degrees",
+            "note": "Phones and tablets"
+          }
+        },
+        "light": {
+          "type": "spec",
+          "settings": {
+            "icon": "light",
+            "label": "Light",
+            "value": "RGB gradient ring",
+            "note": "Can be switched off"
+          }
+        },
+        "weight": {
+          "type": "spec",
+          "settings": {
+            "icon": "weight",
+            "label": "Weight",
+            "value": "482 g"
+          }
+        },
+        "box": {
+          "type": "spec",
+          "settings": {
+            "icon": "ruler",
+            "label": "Box size",
+            "value": "18 x 15 x 10 cm"
+          }
+        },
+        "colour": {
+          "type": "spec",
+          "settings": {
+            "icon": "palette",
+            "label": "Colour",
+            "value": "Black",
+            "note": "Carbon-fibre texture"
+          }
+        },
+        "cert": {
+          "type": "spec",
+          "settings": {
+            "icon": "shield",
+            "label": "Certification",
+            "value": "FCC"
+          }
+        }
+      },
+      "block_order": ["bluetooth", "battery", "angle", "light", "weight", "box", "colour", "cert"],
+      "settings": {
+        "heading": "The numbers",
+        "intro": "<p>Everything we know about the hardware, in one place. If a figure is not here, ask us before you order rather than guessing.</p>",
+        "color_scheme": "scheme-2",
+        "columns": 4,
+        "show_in_the_box": true,
+        "in_the_box_heading": "What's in the box",
+        "in_the_box": "<p>Perch speaker stand, USB charging cable, Quick-start guide</p>",
+        "padding_top": 56,
         "padding_bottom": 56
-      }
-    },
-    "how-we-choose": {
-      "type": "multirow",
-      "blocks": {
-        "forms": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/stillwell-forms.jpg",
-            "caption": "How we choose",
-            "heading": "Usable forms, research doses",
-            "text": "<p>Chelated minerals, the extract ratios used in the studies, and amounts that match them. If the evidence points to 300 mg, we do not put in 50 mg and list the ingredient anyway.</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "tests": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/stillwell-tests.jpg",
-            "caption": "How we choose",
-            "heading": "Published third-party tests",
-            "text": "<p>Every batch is tested by an independent lab for identity, potency and contaminants. Ask for a result and we will send it. No certificate, no product.</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "short-list": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/stillwell-shortlist.jpg",
-            "caption": "How we choose",
-            "heading": "A short list, on purpose",
-            "text": "<p>Sixteen products, not a hundred and sixty. Each one has to earn its place, and the How to choose page tells you which one or two you actually need.</p>",
-            "button_label": "How to choose",
-            "button_link": "shopify://pages/how-to-choose"
-          }
-        }
-      },
-      "block_order": [
-        "forms",
-        "tests",
-        "short-list"
-      ],
-      "settings": {
-        "image_height": "small",
-        "desktop_image_width": "medium",
-        "image_layout": "alternate-left",
-        "heading_size": "h2",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-1",
-        "row_color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40
       }
     },
     "stats": {
       "type": "stats-strip",
       "blocks": {
-        "tested": {
+        "battery": {
           "type": "stat",
           "settings": {
-            "value": "3rd-party",
-            "label": "Tested, every batch"
+            "value": "1500 mAh",
+            "label": "Battery, charges over USB"
+          }
+        },
+        "angle": {
+          "type": "stat",
+          "settings": {
+            "value": "75°",
+            "label": "Stand angle, phone or tablet"
+          }
+        },
+        "bluetooth": {
+          "type": "stat",
+          "settings": {
+            "value": "5.4",
+            "label": "Bluetooth, plus induction mode"
           }
         },
         "returns": {
           "type": "stat",
           "settings": {
             "value": "30 days",
-            "label": "Returns, opened or not"
-          }
-        },
-        "shipping": {
-          "type": "stat",
-          "settings": {
-            "value": "$60",
-            "label": "Free shipping threshold"
+            "label": "To return it if it is not right"
           }
         }
       },
-      "block_order": [
-        "tested",
-        "returns",
-        "shipping"
-      ],
+      "block_order": ["battery", "angle", "bluetooth", "returns"],
       "settings": {
         "heading": "",
         "heading_size": "h2",
@@ -286,47 +366,43 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "routine": {
+        "bedside": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "title": "The routine actually fits",
-            "quote": "<p>I was taking six things before. Went through the How to choose page and ended up with two. Three months in, I have not missed a day, which is more than I could say for the old shelf of bottles.</p>",
-            "author": "Priya S., Toronto",
-            "verified": true
+            "title": "Replaced two things on the nightstand",
+            "quote": "<p>I had a little speaker and a phone stand fighting for space. This is both, and the induction mode genuinely works, I just lean the phone on it and the podcast comes out of the speaker. The light is dimmer than I expected, which I like.</p>",
+            "author": "Example review, replace with a real one",
+            "verified": false
+          }
+        },
+        "tablet": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "title": "Holds an iPad in the kitchen",
+            "quote": "<p>Opened the foot all the way and it takes a full-size tablet without tipping. Sound is clearly better than the tablet's own. Four stars because I would prefer a USB-C port to the cable it ships with.</p>",
+            "author": "Example review, replace with a real one",
+            "verified": false
           }
         },
         "delivery": {
           "type": "testimonial",
           "settings": {
-            "rating": 4,
-            "title": "Delivery estimate was accurate",
-            "quote": "<p>Ordered Sunday night. The confirmation said Wednesday to Friday and it came Thursday. Plain packaging, sealed tub. Four stars only because I wish the electrolyte powder came in a bigger size.</p>",
-            "author": "Marc D., Halifax",
-            "verified": true
-          }
-        },
-        "answers": {
-          "type": "testimonial",
-          "settings": {
             "rating": 5,
-            "title": "Answers without the sales pitch",
-            "quote": "<p>I emailed asking whether the adaptogen complex would overlap with my multivitamin. Got a straight answer the next morning, including a suggestion to check with my pharmacist about a medication I take. Did not expect that from a supplement company.</p>",
-            "author": "Janelle R., Calgary",
-            "verified": true
+            "title": "Arrived inside the window",
+            "quote": "<p>Checkout said two weeks, it took eleven days, tracked the whole way. No surprise fees at the door. Came well packed.</p>",
+            "author": "Example review, replace with a real one",
+            "verified": false
           }
         }
       },
-      "block_order": [
-        "routine",
-        "delivery",
-        "answers"
-      ],
+      "block_order": ["bedside", "tablet", "delivery"],
       "settings": {
         "eyebrow": "From customers",
         "heading": "What people tell us",
         "heading_size": "h1",
-        "subheading": "<p>Real orders, quoted with permission. We do not edit out the four-star ones.</p>",
+        "subheading": "<p>Quoted with permission. We do not edit out the four-star ones.</p>",
         "verified_label": "Verified order",
         "columns_desktop": 3,
         "color_scheme": "scheme-1",
@@ -337,72 +413,66 @@
     "comparison": {
       "type": "comparison-table",
       "blocks": {
-        "amounts": {
+        "devices": {
           "type": "row",
           "settings": {
-            "feature": "Amounts on the label",
+            "feature": "Devices on the nightstand",
             "us": true,
-            "us_text": "Every ingredient, every dose",
+            "us_text": "One",
             "them": false,
-            "them_text": "Proprietary blends"
+            "them_text": "Speaker, stand and a lamp"
           }
         },
-        "tests": {
+        "pairing": {
           "type": "row",
           "settings": {
-            "feature": "Third-party test results",
+            "feature": "Getting sound out of your phone",
             "us": true,
-            "us_text": "Sent on request, every batch",
+            "us_text": "Lean it on the stand",
             "them": false,
-            "them_text": "Rarely published"
+            "them_text": "Pair, wait, re-pair"
           }
         },
-        "returns": {
+        "tablet": {
           "type": "row",
           "settings": {
-            "feature": "Returns",
+            "feature": "Holds a tablet",
             "us": true,
-            "us_text": "30 days, even if opened",
+            "us_text": "Up to 75 degrees, foot folds out",
             "them": false,
-            "them_text": "Unopened only, or store credit"
+            "them_text": "Phone only, or not at all"
           }
         },
-        "subscription": {
+        "power": {
           "type": "row",
           "settings": {
-            "feature": "Subscriptions",
+            "feature": "Power",
             "us": true,
-            "us_text": "Optional, cancel any time",
+            "us_text": "1500 mAh, USB charging",
             "them": false,
-            "them_text": "Best price only with auto-ship"
+            "them_text": "Wall plug or coin cells"
           }
         },
-        "delivery": {
+        "light": {
           "type": "row",
           "settings": {
-            "feature": "Delivery estimates",
+            "feature": "Light you can switch off",
             "us": true,
-            "us_text": "Real dates from the carrier",
+            "us_text": "Yes",
             "them": false,
-            "them_text": "Countdown timers and stock counters"
+            "them_text": "Always on, or none"
           }
         }
       },
-      "block_order": [
-        "amounts",
-        "tests",
-        "returns",
-        "subscription",
-        "delivery"
-      ],
+      "block_order": ["devices", "pairing", "tablet", "power", "light"],
       "settings": {
-        "heading": "What is different here",
+        "heading": "Perch, versus buying the pieces",
         "heading_size": "h1",
-        "subheading": "<p>None of this is complicated. It is just uncommon.</p>",
-        "us_label": "",
-        "them_label": "Typical supplement brand",
-        "button_label": "Shop bestsellers",
-        "button_link": "shopify://collections/bestsellers",
+        "subheading": "<p>A speaker, a stand and a small light bought separately cost more and share the same outlet.</p>",
+        "us_label": "Perch",
+        "them_label": "Separate speaker and stand",
+        "button_label": "Buy Perch",
+        "button_link": "shopify://products/perch-speaker-stand-with-ambient-light",
         "color_scheme": "scheme-2",
         "padding_top": 56,
         "padding_bottom": 56
@@ -411,59 +481,62 @@
     "faq": {
       "type": "collapsible-content",
       "blocks": {
-        "start": {
+        "induction": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Which product should I start with?",
+            "heading": "How does induction mode work, and does it need pairing?",
             "icon": "none",
-            "row_content": "<p>If you are new to supplements, start with one. For most people that is a multivitamin or a hydration powder, depending on what is missing from your day. The How to choose page walks through it in a few minutes, and you can email us if you are still unsure.</p>",
+            "row_content": "<p>No pairing. Play anything on your phone, then rest the phone on the stand with its speaker facing the pad. Perch picks up the sound through induction and plays it through its own driver. It works with any phone that has a speaker, with no app and no Bluetooth. For a tablet or a laptop, or when you want to keep the phone in your hand, use Bluetooth instead.</p>",
             "page": ""
           }
         },
-        "medication": {
+        "tablet": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "I take medication. Is this safe for me?",
+            "heading": "Does it hold a tablet?",
             "icon": "none",
-            "row_content": "<p>We cannot answer that for you. Some ingredients, including ashwagandha and turmeric, can interact with medications. Please check with your pharmacist or doctor before starting anything new, and bring the label with you.</p>",
+            "row_content": "<p>Yes. The foot folds out and the stand tilts to 75 degrees, which takes a full-size tablet in landscape. Open the foot fully for anything larger than a phone.</p>",
             "page": ""
           }
         },
-        "notice": {
+        "battery": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "When will I notice anything?",
+            "heading": "How long does the battery last?",
             "icon": "none",
-            "row_content": "<p>It depends on the product and on you. Electrolytes work within the hour. Creatine takes a few weeks to build up. Multivitamins and adaptogens are usually a matter of weeks, and some people notice nothing obvious, which is normal. We do not promise a feeling.</p>",
+            "row_content": "<p>The battery is 1500 mAh. How long that lasts depends on volume and on whether the light is on, so we would rather not quote a single number. An evening of film at normal volume is comfortably within range. It charges over USB with the cable in the box, and it works while plugged in.</p>",
             "page": ""
           }
         },
-        "vegan": {
+        "light": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are your products vegan and gluten-free?",
+            "heading": "Can I turn the light off?",
             "icon": "none",
-            "row_content": "<p>Most are. Each product page lists this under What's in it, and the label is always the final word. The whey protein is not vegan; the plant protein is.</p>",
+            "row_content": "<p>Yes. The ring has its own control and can be switched off while the speaker keeps playing.</p>",
             "page": ""
           }
         },
-        "storage": {
+        "delivery": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How should I store them?",
+            "heading": "How long does delivery take?",
             "icon": "none",
-            "row_content": "<p>Cool, dry, out of direct sun, lid closed. The bathroom cabinet is usually too humid for powders. Capsules are fine in a kitchen cupboard.</p>",
+            "row_content": "<p>Most orders arrive in 8 to 15 business days with tracking, and the estimate shown at checkout for your address is the real one. Shipping is free in Canada. Any duties or taxes are calculated and shown at checkout, so there is nothing to pay at the door.</p>",
+            "page": ""
+          }
+        },
+        "returns": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if it is not for me, or it stops working?",
+            "icon": "none",
+            "row_content": "<p>Send it back within 30 days of delivery for a full refund, no explanation needed and no restocking fee. If it develops a fault within 12 months, send us a short video and we ship a replacement. You do not need to return the faulty one.</p>",
             "page": ""
           }
         }
       },
-      "block_order": [
-        "start",
-        "medication",
-        "notice",
-        "vegan",
-        "storage"
-      ],
+      "block_order": ["induction", "tablet", "battery", "light", "delivery", "returns"],
       "settings": {
         "caption": "Common questions",
         "heading": "Before you order",
@@ -472,7 +545,7 @@
         "layout": "row",
         "container_color_scheme": "scheme-2",
         "color_scheme": "scheme-1",
-        "open_first_collapsible_row": false,
+        "open_first_collapsible_row": true,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "padding_top": 56,
@@ -492,18 +565,15 @@
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Restock notices and what the research actually says. A few times a month, and you can leave with one click.</p>"
+            "text": "<p>Restock notices and the occasional discount. A few times a year, and you can leave with one click.</p>"
           }
         },
         "email_form": {
-          "type": "email_form"
+          "type": "email_form",
+          "settings": {}
         }
       },
-      "block_order": [
-        "heading",
-        "paragraph",
-        "email_form"
-      ],
+      "block_order": ["heading", "paragraph", "email_form"],
       "settings": {
         "color_scheme": "scheme-4",
         "full_width": true,
@@ -512,17 +582,5 @@
       }
     }
   },
-  "order": [
-    "hero",
-    "trust",
-    "routine",
-    "bestsellers",
-    "collections",
-    "how-we-choose",
-    "stats",
-    "testimonials",
-    "comparison",
-    "faq",
-    "newsletter"
-  ]
+  "order": ["hero", "trust", "features", "product", "scenes", "specs", "stats", "testimonials", "comparison", "faq", "newsletter"]
 }

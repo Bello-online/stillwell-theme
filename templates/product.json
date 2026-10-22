@@ -6,15 +6,17 @@
         "eyebrow": {
           "type": "text",
           "settings": {
-            "text": "Third-party tested",
+            "text": "Induction speaker stand",
             "text_style": "uppercase"
           }
         },
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {}
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -24,7 +26,8 @@
           }
         },
         "quantity_selector": {
-          "type": "quantity_selector"
+          "type": "quantity_selector",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -38,31 +41,38 @@
           "settings": {
             "layout": "horizontal",
             "icon_1": "truck",
-            "heading_1": "Free shipping over $60",
+            "heading_1": "Free shipping in Canada",
             "icon_2": "return",
-            "heading_2": "30-day returns, even if opened",
+            "heading_2": "30-day returns",
             "icon_3": "check_mark",
-            "heading_3": "Third-party tested"
+            "heading_3": "12-month warranty"
+          }
+        },
+        "summary": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<ul class=\"perch-summary list-unstyled\"><li>Induction mode plays your phone's audio with no pairing</li><li>Bluetooth 5.4 for phones, tablets and laptops</li><li>Folding stand holds a phone or tablet at up to 75 degrees</li><li>Gradient light ring with an off setting</li><li>1500 mAh battery, USB charging cable included</li></ul>"
           }
         },
         "description": {
-          "type": "description"
+          "type": "description",
+          "settings": {}
         },
-        "how-to-take": {
+        "in-the-box": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How to take it",
+            "heading": "What's in the box",
             "icon": "none",
-            "content": "<p>Follow the directions on the label. Most of our capsules are taken once a day with food; powders are mixed into water or a shake. If you take medication or are pregnant or breastfeeding, check with your pharmacist or doctor first.</p>",
+            "content": "<p>Perch speaker stand, USB charging cable, quick-start guide.</p>",
             "page": ""
           }
         },
-        "whats-in-it": {
+        "specs": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "What's in it",
+            "heading": "Specifications",
             "icon": "none",
-            "content": "<p>Merchant: paste the full supplement facts here, including the form of each ingredient (for example, magnesium bisglycinate) and the amount per serving. Note allergens and whether the product is vegan and gluten-free.</p>",
+            "content": "<p>Wireless: Bluetooth 5.4 plus induction mode. Battery: 1500 mAh, rechargeable over USB. Stand: folding foot, tilts up to 75 degrees, holds phones and tablets. Light: RGB gradient ring, can be switched off. Weight: 482 g. Box: 18 by 15 by 10 cm. Colour: black with a carbon-fibre texture. Certification: FCC.</p>",
             "page": ""
           }
         },
@@ -71,7 +81,7 @@
           "settings": {
             "heading": "Shipping and returns",
             "icon": "none",
-            "content": "<p>Free standard shipping on orders over $60; flat $9.95 below that. Orders ship from Canada and you will see the carrier's real delivery estimate at checkout.</p><p>Returns are accepted for 30 days, even if opened. We cover return shipping and there are no restocking fees.</p>",
+            "content": "<p>Free tracked shipping in Canada. Most orders arrive in 8 to 15 business days and the estimate at checkout is the realistic one. Duties and taxes are shown at checkout, so nothing is owed at the door. Thirty-day returns for any reason, no restocking fee, and a 12-month replacement warranty on defects.</p>",
             "page": ""
           }
         },
@@ -90,9 +100,10 @@
         "quantity_selector",
         "buy_buttons",
         "reassurance",
+        "summary",
         "description",
-        "how-to-take",
-        "whats-in-it",
+        "in-the-box",
+        "specs",
         "shipping-returns",
         "share"
       ],
@@ -112,131 +123,167 @@
         "padding_bottom": 24
       }
     },
-    "supplement-facts": {
-      "type": "supplement-facts",
+    "features": {
+      "type": "perch-features",
       "blocks": {
-        "d3": {
-          "type": "row",
+        "induction": {
+          "type": "feature",
           "settings": {
-            "ingredient": "Vitamin D3 (cholecalciferol)",
-            "amount": "25 mcg",
-            "dv": "125%",
-            "why": "Most people are low by winter"
+            "icon": "induction",
+            "heading": "Induction mode",
+            "text": "Rest your phone against the pad with its speaker facing it. The audio plays through Perch straight away, no pairing, no app."
           }
         },
-        "magnesium": {
-          "type": "row",
+        "bluetooth": {
+          "type": "feature",
           "settings": {
-            "ingredient": "Magnesium (bisglycinate)",
-            "amount": "200 mg",
-            "dv": "48%",
-            "why": "The form that does not upset your stomach"
+            "icon": "bluetooth",
+            "heading": "Bluetooth 5.4",
+            "text": "Pair once for a stable connection from a phone, tablet or laptop across the room."
           }
         },
-        "zinc": {
-          "type": "row",
+        "stand": {
+          "type": "feature",
           "settings": {
-            "ingredient": "Zinc (picolinate)",
-            "amount": "11 mg",
-            "dv": "100%",
-            "why": "Supports normal immune function; picolinate absorbs well"
+            "icon": "angle",
+            "heading": "Stand for phone or tablet",
+            "text": "The foot folds out and the stand tilts up to 75 degrees. Takes a full-size tablet."
           }
         },
-        "b12": {
-          "type": "row",
+        "light": {
+          "type": "feature",
           "settings": {
-            "ingredient": "Vitamin B12 (methylcobalamin)",
-            "amount": "500 mcg",
-            "dv": "20,833%",
-            "why": "The active form, so no conversion step is needed"
-          }
-        },
-        "ashwagandha": {
-          "type": "row",
-          "settings": {
-            "ingredient": "Ashwagandha (KSM-66 root extract)",
-            "amount": "300 mg",
-            "dv": "",
-            "why": "The extract and dose used in the trials, not a sprinkle"
-          }
-        },
-        "k2": {
-          "type": "row",
-          "settings": {
-            "ingredient": "Vitamin K2 (MK-7)",
-            "amount": "90 mcg",
-            "dv": "75%",
-            "why": "Pairs with D3 to support normal calcium use"
+            "icon": "light",
+            "heading": "Ambient ring",
+            "text": "A soft gradient around the face, with an off setting for when you want the room dark."
           }
         }
       },
-      "block_order": [
-        "d3",
-        "magnesium",
-        "zinc",
-        "b12",
-        "ashwagandha",
-        "k2"
-      ],
+      "block_order": ["induction", "bluetooth", "stand", "light"],
       "settings": {
-        "heading": "What's in it, and how much",
-        "intro": "<p>Every ingredient, its form and the amount per serving. No proprietary blends, so you can compare us with anything else on the shelf.</p>",
-        "serving": "Serving: 2 capsules",
-        "servings_per": "30 servings per bottle",
-        "footnote": "<p>&dagger; Daily value not established. If you take medication or are pregnant or breastfeeding, check with your pharmacist or doctor before starting.</p><p><strong>Merchant:</strong> these rows are illustrative placeholders. Replace them with the exact ingredients, forms and amounts from this product's label before publishing.</p>",
-        "show_disclaimer": true,
-        "disclaimer": "<p>These statements have not been evaluated by Health Canada or the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>",
+        "anchor": "",
+        "eyebrow": "How it works",
+        "heading": "One stand. Four jobs.",
+        "subheading": "",
+        "columns": 4,
+        "show_numbers": true,
         "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 48
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "Often paired with this",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
+        "card_color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "specs": {
+      "type": "spec-sheet",
+      "blocks": {
+        "bluetooth": {
+          "type": "spec",
+          "settings": {
+            "icon": "bluetooth",
+            "label": "Wireless",
+            "value": "Bluetooth 5.4",
+            "note": "Plus induction mode, no pairing"
+          }
+        },
+        "battery": {
+          "type": "spec",
+          "settings": {
+            "icon": "battery",
+            "label": "Battery",
+            "value": "1500 mAh",
+            "note": "Rechargeable, cable included"
+          }
+        },
+        "angle": {
+          "type": "spec",
+          "settings": {
+            "icon": "angle",
+            "label": "Stand angle",
+            "value": "Up to 75 degrees",
+            "note": "Phones and tablets"
+          }
+        },
+        "light": {
+          "type": "spec",
+          "settings": {
+            "icon": "light",
+            "label": "Light",
+            "value": "RGB gradient ring",
+            "note": "Can be switched off"
+          }
+        },
+        "weight": {
+          "type": "spec",
+          "settings": {
+            "icon": "weight",
+            "label": "Weight",
+            "value": "482 g"
+          }
+        },
+        "box": {
+          "type": "spec",
+          "settings": {
+            "icon": "ruler",
+            "label": "Box size",
+            "value": "18 x 15 x 10 cm"
+          }
+        },
+        "colour": {
+          "type": "spec",
+          "settings": {
+            "icon": "palette",
+            "label": "Colour",
+            "value": "Black",
+            "note": "Carbon-fibre texture"
+          }
+        },
+        "cert": {
+          "type": "spec",
+          "settings": {
+            "icon": "shield",
+            "label": "Certification",
+            "value": "FCC"
+          }
+        }
+      },
+      "block_order": ["bluetooth", "battery", "angle", "light", "weight", "box", "colour", "cert"],
+      "settings": {
+        "heading": "Specifications",
+        "intro": "",
+        "color_scheme": "scheme-2",
+        "columns": 4,
+        "show_in_the_box": true,
+        "in_the_box_heading": "What's in the box",
+        "in_the_box": "<p>Perch speaker stand, USB charging cable, Quick-start guide</p>",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "labels": {
+        "bedside": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "title": "Labels say what is inside",
-            "quote": "<p>Every amount is listed. No blend with a total but no breakdown. That is the whole reason I switched, and the How to choose page saved me from buying things I did not need.</p>",
-            "author": "Kwame A., Ottawa",
-            "verified": true
+            "title": "Replaced two things on the nightstand",
+            "quote": "<p>I had a little speaker and a phone stand fighting for space. This is both, and the induction mode genuinely works. The light is dimmer than I expected, which I like.</p>",
+            "author": "Example review, replace with a real one",
+            "verified": false
           }
         },
-        "returned": {
+        "tablet": {
           "type": "testimonial",
           "settings": {
             "rating": 4,
-            "title": "Returned one, kept the other",
-            "quote": "<p>The protein was not for me, so I sent it back half used. Refund landed in about a week with no questions asked. Kept the creatine and have reordered it since.</p>",
-            "author": "Sarah L., Vancouver",
-            "verified": true
+            "title": "Holds an iPad in the kitchen",
+            "quote": "<p>Opened the foot all the way and it takes a full-size tablet without tipping. Sound is clearly better than the tablet's own.</p>",
+            "author": "Example review, replace with a real one",
+            "verified": false
           }
         }
       },
-      "block_order": [
-        "labels",
-        "returned"
-      ],
+      "block_order": ["bedside", "tablet"],
       "settings": {
         "eyebrow": "From customers",
         "heading": "What people tell us",
@@ -244,7 +291,7 @@
         "subheading": "",
         "verified_label": "Verified order",
         "columns_desktop": 2,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -252,20 +299,12 @@
     "trust": {
       "type": "trust-bar",
       "blocks": {
-        "tested": {
-          "type": "item",
-          "settings": {
-            "icon": "check_mark",
-            "heading": "Third-party tested",
-            "text": "Every batch, results on request"
-          }
-        },
         "shipping": {
           "type": "item",
           "settings": {
             "icon": "truck",
-            "heading": "Free shipping over $60",
-            "text": "Flat $9.95 below that"
+            "heading": "Free shipping",
+            "text": "Every order, tracked, no minimum"
           }
         },
         "returns": {
@@ -273,36 +312,33 @@
           "settings": {
             "icon": "return",
             "heading": "30-day returns",
-            "text": "Even if opened, shipping covered"
+            "text": "Send it back, no explanation needed"
           }
         },
-        "canada": {
+        "warranty": {
           "type": "item",
           "settings": {
-            "icon": "map_pin",
-            "heading": "Ships from Canada",
-            "text": "Real carrier estimates, no surprises"
+            "icon": "check_mark",
+            "heading": "12-month warranty",
+            "text": "Replacement on defects, keep the old one"
+          }
+        },
+        "checkout": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "heading": "Secure checkout",
+            "text": "Shop Pay, Apple Pay, PayPal"
           }
         }
       },
-      "block_order": [
-        "tested",
-        "shipping",
-        "returns",
-        "canada"
-      ],
+      "block_order": ["shipping", "returns", "warranty", "checkout"],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "padding_top": 24,
         "padding_bottom": 40
       }
     }
   },
-  "order": [
-    "main",
-    "supplement-facts",
-    "related-products",
-    "testimonials",
-    "trust"
-  ]
+  "order": ["main", "features", "specs", "testimonials", "trust"]
 }

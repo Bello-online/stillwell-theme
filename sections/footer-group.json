@@ -22,17 +22,13 @@
           "type": "text",
           "settings": {
             "heading": "Shipping and returns",
-            "subtext": "<p>Free standard shipping on orders over $60, flat $9.95 below that. 30-day returns, even if opened. We cover return shipping and there are no restocking fees.</p>"
+            "subtext": "<p>Free tracked shipping in Canada on every order. Thirty-day returns, no explanation needed, no restocking fee. Twelve-month replacement warranty on defects.</p>"
           }
         }
       },
-      "block_order": [
-        "brand",
-        "help-menu",
-        "shipping-note"
-      ],
+      "block_order": ["brand", "help-menu", "shipping-note"],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-2",
         "newsletter_enable": true,
         "newsletter_heading": "Short emails, no hype",
         "enable_follow_on_shop": true,
@@ -47,7 +43,5 @@
       }
     }
   },
-  "order": [
-    "footer"
-  ]
+  "order": ["footer"]
 }

@@ -5,7 +5,7 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-5",
         "show_line_separator": false,
         "show_social": false,
         "auto_rotate": false,
@@ -17,14 +17,12 @@
         "announcement-shipping": {
           "type": "announcement",
           "settings": {
-            "text": "Free shipping on orders over $60 · 30-day returns, even if opened",
-            "link": "shopify://pages/shipping"
+            "text": "Free tracked shipping in Canada · 30-day returns · 12-month warranty",
+            "link": "shopify://pages/shipping-delivery"
           }
         }
       },
-      "block_order": [
-        "announcement-shipping"
-      ]
+      "block_order": ["announcement-shipping"]
     },
     "header": {
       "type": "header",
@@ -45,8 +43,5 @@
       }
     }
   },
-  "order": [
-    "announcement-bar",
-    "header"
-  ]
+  "order": ["announcement-bar", "header"]
 }

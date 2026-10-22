@@ -1,14 +1,16 @@
-{{ 'section-stillwell-hero.css' | asset_url | stylesheet_tag }}
+{{ 'section-perch-hero.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
   }
+  #PerchHero-{{ section.id }} { --perch-hero-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }}; }
 {%- endstyle -%}
 
 {%- liquid
   assign image = section.settings.image
+  assign product = section.settings.product
   assign trust_items = ''
   if section.settings.trust_1 != blank
     assign trust_items = trust_items | append: section.settings.trust_1 | append: '||'
@@ -20,10 +22,20 @@
     assign trust_items = trust_items | append: section.settings.trust_3 | append: '||'
   endif
   assign trust_items = trust_items | split: '||'
+
+  assign button_label = section.settings.button_label
+  if section.settings.show_price and product != blank
+    assign price_text = product.selected_or_first_available_variant.price | money
+    assign button_label = button_label | append: ' · ' | append: price_text
+  endif
+  assign button_link = section.settings.button_link
+  if button_link == blank and product != blank
+    assign button_link = product.url
+  endif
 -%}
 
-<div class="stillwell-hero stillwell-hero--image-{{ section.settings.image_position }} color-{{ section.settings.color_scheme }} gradient">
-  <div class="stillwell-hero__media">
+<div id="PerchHero-{{ section.id }}" class="perch-hero perch-hero--content-{{ section.settings.content_position }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="perch-hero__media">
     {%- if image != blank -%}
       {{
         image
@@ -31,46 +43,49 @@
         | image_tag:
           width: image.width,
           height: image.height,
-          class: 'stillwell-hero__image',
+          class: 'perch-hero__image',
           widths: '750, 1100, 1500, 2000, 2400',
-          sizes: '(min-width: 990px) 58vw, 100vw',
+          sizes: '100vw',
           loading: 'eager',
           fetchpriority: 'high'
       }}
     {%- else -%}
-      <div class="stillwell-hero__placeholder placeholder">
+      <div class="perch-hero__placeholder placeholder">
         {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
       </div>
     {%- endif -%}
-    <span class="stillwell-hero__fade" aria-hidden="true"></span>
+    <span class="perch-hero__overlay" aria-hidden="true"></span>
   </div>
 
-  <div class="stillwell-hero__panel section-{{ section.id }}-padding">
-    <div class="stillwell-hero__content">
+  <div class="perch-hero__panel page-width section-{{ section.id }}-padding">
+    <div class="perch-hero__content">
       {%- if section.settings.eyebrow != blank -%}
-        <p class="stillwell-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <p class="perch-hero__eyebrow">
+          <span class="perch-hero__dot" aria-hidden="true"></span>
+          {{ section.settings.eyebrow | escape }}
+        </p>
       {%- endif -%}
 
       {%- if section.settings.heading != blank -%}
-        <h1 class="stillwell-hero__heading">{{ section.settings.heading | escape }}</h1>
+        <h1 class="perch-hero__heading">{{ section.settings.heading | escape }}</h1>
       {%- endif -%}
 
       {%- if section.settings.text != blank -%}
-        <div class="stillwell-hero__text rte">{{ section.settings.text }}</div>
+        <div class="perch-hero__text rte">{{ section.settings.text }}</div>
       {%- endif -%}
 
-      {%- if section.settings.button_label != blank or section.settings.button_label_2 != blank -%}
-        <div class="stillwell-hero__buttons">
-          {%- if section.settings.button_label != blank -%}
+      {%- if button_label != blank or section.settings.button_label_2 != blank -%}
+        <div class="perch-hero__buttons">
+          {%- if button_label != blank -%}
             <a
-              {% if section.settings.button_link == blank %}
+              {% if button_link == blank %}
                 role="link" aria-disabled="true"
               {% else %}
-                href="{{ section.settings.button_link }}"
+                href="{{ button_link }}"
               {% endif %}
-              class="button"
+              class="button perch-hero__cta"
             >
-              {{- section.settings.button_label | escape -}}
+              {{- button_label | escape -}}
             </a>
           {%- endif -%}
           {%- if section.settings.button_label_2 != blank -%}
@@ -89,12 +104,10 @@
       {%- endif -%}
 
       {%- if trust_items.size > 0 -%}
-        <ul class="stillwell-hero__trust list-unstyled" role="list">
+        <ul class="perch-hero__trust list-unstyled" role="list">
           {%- for item in trust_items -%}
-            <li class="stillwell-hero__trust-item">
-              <svg class="stillwell-hero__check" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="14" height="14">
-                <path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+            <li class="perch-hero__trust-item">
+              {% render 'icon-perch', icon: 'check' %}
               <span>{{ item | escape }}</span>
             </li>
           {%- endfor -%}
@@ -106,9 +119,9 @@
 
 {% schema %}
 {
-  "name": "Stillwell hero",
+  "name": "Perch hero",
   "tag": "section",
-  "class": "section section-stillwell-hero",
+  "class": "section section-perch-hero",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -117,52 +130,79 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image",
-      "info": "Landscape, at least 2400 px wide. Leave the side nearest the text fairly plain; a soft fade joins it to the text panel."
+      "info": "Landscape, at least 2000 px wide. Keep the subject on the right so the text has room on the left."
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay strength behind the text",
+      "default": 60
     },
     {
       "type": "select",
-      "id": "image_position",
-      "label": "Image position on desktop",
+      "id": "content_position",
+      "label": "Text position on desktop",
       "options": [
         { "value": "left", "label": "Left" },
-        { "value": "right", "label": "Right" }
+        { "value": "center", "label": "Centre" }
       ],
-      "default": "right"
+      "default": "left"
     },
     {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Supplements, chosen carefully"
+      "default": "Induction speaker stand"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Fewer bottles. Better ones."
+      "default": "Set your phone down. The sound comes on."
     },
     {
       "type": "richtext",
       "id": "text",
       "label": "Text",
-      "default": "<p>A short list of supplements in usable forms at research doses. Every batch is third-party tested and every label lists the full amounts.</p>"
+      "default": "<p>A speaker and a stand in one. Rest your phone or tablet against it and the audio plays through the speaker, no pairing needed.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Used for the price on the primary button and as its link when no link is set."
     },
     {
       "type": "text",
       "id": "button_label",
       "label": "Primary button label",
-      "default": "Shop bestsellers"
+      "default": "Buy Perch"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Append the product price to the primary button",
+      "default": true
     },
     {
       "type": "url",
       "id": "button_link",
-      "label": "Primary button link"
+      "label": "Primary button link",
+      "info": "Leave empty to link to the product above."
     },
     {
       "type": "text",
       "id": "button_label_2",
       "label": "Secondary button label",
-      "default": "How to choose"
+      "default": "How it works"
     },
     {
       "type": "url",
@@ -177,19 +217,19 @@
       "type": "text",
       "id": "trust_1",
       "label": "Item 1",
-      "default": "Third-party tested"
+      "default": "Free shipping"
     },
     {
       "type": "text",
       "id": "trust_2",
       "label": "Item 2",
-      "default": "30-day returns, even opened"
+      "default": "30-day returns"
     },
     {
       "type": "text",
       "id": "trust_3",
       "label": "Item 3",
-      "default": "Free shipping over $60"
+      "default": "12-month warranty"
     },
     {
       "type": "header",
@@ -205,26 +245,26 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 160,
+      "step": 8,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 64
+      "default": 96
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 160,
+      "step": 8,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 64
+      "default": 96
     }
   ],
   "presets": [
     {
-      "name": "Stillwell hero"
+      "name": "Perch hero"
     }
   ]
 }

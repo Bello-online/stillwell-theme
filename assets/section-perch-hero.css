@@ -1,0 +1,208 @@
+/* Perch hero: full-bleed image with a gradient overlay and left-aligned copy on desktop;
+   stacked image-then-copy on mobile. The scheme background bleeds through the overlay so
+   the text stays legible on any photo. */
+
+.perch-hero {
+  --perch-hero-overlay: 0.6;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.perch-hero__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+}
+
+.perch-hero__image,
+.perch-hero__placeholder,
+.perch-hero__placeholder .placeholder-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 50%;
+}
+
+.perch-hero__placeholder {
+  background: rgba(var(--color-foreground), 0.06);
+}
+
+.perch-hero__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(var(--color-background), 1) 0%,
+    rgba(var(--color-background), calc(var(--perch-hero-overlay) * 0.6)) 35%,
+    rgba(var(--color-background), 0) 70%
+  );
+}
+
+.perch-hero__panel {
+  position: relative;
+  z-index: 1;
+  margin-top: -6rem;
+}
+
+.perch-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 60rem;
+}
+
+.perch-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 1.6rem;
+  color: rgba(var(--color-foreground), 0.8);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.perch-hero__dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: rgb(var(--color-button));
+  box-shadow: 0 0 1.2rem rgba(var(--color-button), 0.9);
+}
+
+.perch-hero__heading {
+  margin: 0;
+  font-size: calc(var(--font-heading-scale) * 3.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.perch-hero__text {
+  margin-top: 1.8rem;
+  max-width: 52rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.85);
+}
+
+.perch-hero__text p {
+  margin: 0;
+}
+
+.perch-hero__text p + p {
+  margin-top: 1rem;
+}
+
+.perch-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 2.8rem;
+}
+
+.perch-hero__cta {
+  box-shadow: 0 1rem 3rem rgba(var(--color-button), 0.35);
+}
+
+.perch-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin: 2.4rem 0 0;
+  padding: 0;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.78);
+}
+
+.perch-hero__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.perch-hero__trust-item svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: rgb(var(--color-button));
+}
+
+@media screen and (min-width: 750px) {
+  .perch-hero__heading {
+    font-size: calc(var(--font-heading-scale) * 5.2rem);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .perch-hero {
+    display: block;
+    min-height: min(82vh, 86rem);
+  }
+
+  .perch-hero__media {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+  }
+
+  .perch-hero__overlay {
+    background:
+      linear-gradient(
+        to right,
+        rgba(var(--color-background), calc(var(--perch-hero-overlay) + 0.3)) 0%,
+        rgba(var(--color-background), var(--perch-hero-overlay)) 38%,
+        rgba(var(--color-background), 0) 68%
+      ),
+      linear-gradient(to top, rgba(var(--color-background), 0.9) 0%, rgba(var(--color-background), 0) 30%);
+  }
+
+  .perch-hero__panel {
+    display: flex;
+    align-items: center;
+    min-height: min(82vh, 86rem);
+    margin-top: 0;
+  }
+
+  .perch-hero--content-center .perch-hero__panel {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .perch-hero--content-center .perch-hero__content {
+    align-items: center;
+  }
+
+  .perch-hero--content-center .perch-hero__buttons,
+  .perch-hero--content-center .perch-hero__trust {
+    justify-content: center;
+  }
+
+  .perch-hero__heading {
+    font-size: calc(var(--font-heading-scale) * 6.4rem);
+  }
+
+  .perch-hero__text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .perch-hero__content > * {
+    animation: perch-hero-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .perch-hero__content > :nth-child(2) { animation-delay: 0.08s; }
+  .perch-hero__content > :nth-child(3) { animation-delay: 0.16s; }
+  .perch-hero__content > :nth-child(4) { animation-delay: 0.24s; }
+  .perch-hero__content > :nth-child(5) { animation-delay: 0.32s; }
+}
+
+@keyframes perch-hero-rise {
+  from { opacity: 0; transform: translateY(1.2rem); }
+  to { opacity: 1; transform: none; }
+}
