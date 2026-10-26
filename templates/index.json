@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -142,7 +151,9 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "heading_size": "h1"
+          }
         },
         "price": {
           "type": "price",
@@ -200,28 +211,6 @@
     "scenes": {
       "type": "perch-scenes",
       "blocks": {
-        "bedside": {
-          "type": "scene",
-          "settings": {
-            "image": "shopify://shop_images/perch-scene-bedside-5.jpg",
-            "room": "Bedside",
-            "heading": "Film in bed, light off at the end",
-            "text": "Lean the phone on the stand and induction picks up the sound. The ring doubles as a night light until you tap it off.",
-            "link_label": "Buy Perch",
-            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
-          }
-        },
-        "desk": {
-          "type": "scene",
-          "settings": {
-            "image": "shopify://shop_images/perch-scene-desk-5.jpg",
-            "room": "Desk",
-            "heading": "A speaker that holds your second screen",
-            "text": "Phone upright for calls and notifications, music over Bluetooth from the laptop. The glow is easier on the eyes than an overhead bulb.",
-            "link_label": "Buy Perch",
-            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
-          }
-        },
         "tablet": {
           "type": "scene",
           "settings": {
@@ -243,13 +232,35 @@
             "link_label": "Buy Perch",
             "link": "shopify://products/perch-speaker-stand-with-ambient-light"
           }
+        },
+        "bedside": {
+          "type": "scene",
+          "settings": {
+            "image": "shopify://shop_images/perch-scene-bedside-5.jpg",
+            "room": "Bedside",
+            "heading": "Film in bed, light off at the end",
+            "text": "Lean the phone on the stand and induction picks up the sound. The ring doubles as a night light until you tap it off.",
+            "link_label": "Buy Perch",
+            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
+          }
+        },
+        "desk": {
+          "type": "scene",
+          "settings": {
+            "image": "shopify://shop_images/perch-scene-desk-5.jpg",
+            "room": "Desk",
+            "heading": "A speaker that holds your second screen",
+            "text": "Phone upright for calls and notifications, music over Bluetooth from the laptop. The glow is easier on the eyes than an overhead bulb.",
+            "link_label": "Buy Perch",
+            "link": "shopify://products/perch-speaker-stand-with-ambient-light"
+          }
         }
       },
       "block_order": [
-        "bedside",
-        "desk",
         "tablet",
-        "movie"
+        "movie",
+        "bedside",
+        "desk"
       ],
       "settings": {
         "heading": "Where it ends up living",
@@ -303,7 +314,8 @@
           "settings": {
             "icon": "weight",
             "label": "Weight",
-            "value": "482 g"
+            "value": "482 g",
+            "note": ""
           }
         },
         "box": {
@@ -311,7 +323,8 @@
           "settings": {
             "icon": "ruler",
             "label": "Box size",
-            "value": "18 x 15 x 10 cm"
+            "value": "18 x 15 x 10 cm",
+            "note": ""
           }
         },
         "colour": {
@@ -328,7 +341,8 @@
           "settings": {
             "icon": "shield",
             "label": "Certification",
-            "value": "FCC"
+            "value": "FCC",
+            "note": ""
           }
         }
       },
