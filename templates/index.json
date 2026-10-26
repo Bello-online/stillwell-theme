@@ -3,7 +3,7 @@
     "hero": {
       "type": "perch-hero",
       "settings": {
-        "image": "shopify://shop_images/perch-hero-7.jpg",
+        "image": "shopify://shop_images/perch-hero-8.jpg",
         "overlay_opacity": 60,
         "content_position": "left",
         "eyebrow": "Induction speaker stand",
@@ -203,7 +203,7 @@
         "bedside": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-bedside-2.jpg",
+            "image": "shopify://shop_images/perch-scene-bedside-5.jpg",
             "room": "Bedside",
             "heading": "Film in bed, light off at the end",
             "text": "Lean the phone on the stand and induction picks up the sound. The ring doubles as a night light until you tap it off.",
@@ -214,7 +214,7 @@
         "desk": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-desk-2.jpg",
+            "image": "shopify://shop_images/perch-scene-desk-5.jpg",
             "room": "Desk",
             "heading": "A speaker that holds your second screen",
             "text": "Phone upright for calls and notifications, music over Bluetooth from the laptop. The glow is easier on the eyes than an overhead bulb.",
@@ -225,7 +225,7 @@
         "tablet": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-tablet-2.jpg",
+            "image": "shopify://shop_images/perch-scene-tablet-5.jpg",
             "room": "Tablet",
             "heading": "A full-size tablet, hands free",
             "text": "Open the foot and the stand takes a tablet in landscape. Recipes in the kitchen, a film on the balcony, no outlet needed.",
@@ -236,7 +236,7 @@
         "movie": {
           "type": "scene",
           "settings": {
-            "image": "shopify://shop_images/perch-scene-devices-2.jpg",
+            "image": "shopify://shop_images/perch-scene-devices-5.jpg",
             "room": "Any device",
             "heading": "Phone by induction, everything else by Bluetooth",
             "text": "Laptop, tablet or a second phone pair over Bluetooth 5.4. Your own phone just leans on the stand.",

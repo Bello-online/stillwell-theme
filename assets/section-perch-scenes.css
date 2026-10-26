@@ -107,7 +107,7 @@
   flex-direction: column;
   justify-content: flex-start;
   min-height: 0;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--media-radius, 1.2rem);
   background: rgba(var(--color-foreground), 0.04);
@@ -126,7 +126,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: 50% 62%;
   transition: transform 0.6s var(--perch-ease, ease);
 }
 
@@ -137,7 +138,7 @@
 
 .perch-scenes__card:hover .perch-scenes__img,
 .perch-scenes__card:focus-within .perch-scenes__img {
-  transform: scale(1.03);
+  transform: none;
 }
 
 .perch-scenes__shade {

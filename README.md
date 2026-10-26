@@ -20,7 +20,7 @@ Fonts: Archivo 700 for headings, Inter 400 for body. Radii 8 to 12 px. One accen
 
 - `sections/perch-hero.liquid` + `assets/section-perch-hero.css`: full-bleed image with gradient overlay, eyebrow, headline, price-aware primary button (reads the product price), trust line.
 - `sections/perch-features.liquid` + `assets/section-perch-features.css`: numbered feature cards with stroke icons from `snippets/icon-perch.liquid`; has an anchor id so the hero button can scroll to it.
-- `sections/perch-scenes.liquid` + `assets/section-perch-scenes.css` + `assets/perch-scenes.js`: horizontal scroll-snap track of 3:2 scene cards (Bedside, Desk, Tablet, Movie night).
+- `sections/perch-scenes.liquid` + `assets/section-perch-scenes.css` + `assets/perch-scenes.js`: horizontal scroll-snap track of 4:3 scene cards (images shown whole, object-fit contain) (Bedside, Desk, Tablet, Movie night).
 - `sections/spec-sheet.liquid` + `assets/section-spec-sheet.css`: spec cards plus a "What's in the box" panel.
 
 Shared conversion layer (identical across the three stores): `trust-bar`, `testimonials`, `comparison-table`, `stats-strip` sections, `sticky-atc` and `free-shipping-bar` snippets, `assets/cro.css`. Brand-only tweaks live in `assets/custom.css`.
@@ -34,7 +34,7 @@ Shared conversion layer (identical across the three stores): `trust-bar`, `testi
 
 ## Images
 
-Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero-7.jpg`, `perch-scene-bedside-2.jpg`, `perch-scene-desk-2.jpg`, `perch-scene-tablet-2.jpg`, `perch-scene-devices-2.jpg`. By the owner's decision all imagery is the supplier's own CJ renders, cropped only to remove supplier text and badges (sources in `media/perch/cj/`). Earlier AI-generated and composited versions are retired.
+Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero-8.jpg`, `perch-scene-bedside-5.jpg`, `perch-scene-desk-5.jpg`, `perch-scene-tablet-5.jpg`, `perch-scene-devices-5.jpg`. By the owner's decision all imagery is the supplier's own CJ renders, cropped only to remove supplier text and badges (sources in `media/perch/cj/`). Earlier AI-generated and composited versions are retired.
 
 ## Validation rules Shopify enforces on sync
 
