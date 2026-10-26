@@ -34,7 +34,7 @@ Shared conversion layer (identical across the three stores): `trust-bar`, `testi
 
 ## Images
 
-Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero-8.jpg`, `perch-scene-bedside-5.jpg`, `perch-scene-desk-5.jpg`, `perch-scene-tablet-5.jpg`, `perch-scene-devices-5.jpg`. By the owner's decision all imagery is the supplier's own CJ renders, cropped only to remove supplier text and badges (sources in `media/perch/cj/`). Earlier AI-generated and composited versions are retired.
+Referenced as `shopify://shop_images/<name>` and uploaded to the store's Files: `perch-logo.png`, `perch-favicon.png`, `perch-hero-8.jpg`, `perch-scene-bedside-5.jpg`, `perch-scene-desk-5.jpg`, `perch-scene-tablet-5.jpg`, `perch-scene-devices-6.jpg`. By the owner's decision all imagery is the supplier's own CJ renders, cropped only to remove supplier text and badges (sources in `media/perch/cj/`). Earlier AI-generated and composited versions are retired.
 
 ## Validation rules Shopify enforces on sync
 
