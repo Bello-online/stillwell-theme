@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
@@ -13,6 +22,7 @@
       "settings": {
         "products_per_page": 12,
         "columns_desktop": 3,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
@@ -23,7 +33,6 @@
         "enable_filtering": true,
         "filter_type": "vertical",
         "enable_sorting": true,
-        "columns_mobile": "2",
         "padding_top": 24,
         "padding_bottom": 40
       }
@@ -75,11 +84,30 @@
         "padding_top": 24,
         "padding_bottom": 24
       }
+    },
+    "17932033643538cde5": {
+      "type": "apps",
+      "blocks": {
+        "alireviews_collection_app_block_rJQnP7": {
+          "type": "shopify://apps/alireviews/blocks/collection-app-block/ed1f8756-3ef0-4b52-b2bc-4add334ee46d",
+          "settings": {
+            "collection": "",
+            "product_per_page": 51
+          }
+        }
+      },
+      "block_order": [
+        "alireviews_collection_app_block_rJQnP7"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "trust"
+    "trust",
+    "17932033643538cde5"
   ]
 }
