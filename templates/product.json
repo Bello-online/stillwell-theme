@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -110,13 +119,13 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_position": "left",
-        "gallery_layout": "stacked",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "image_zoom": "lightbox",
+        "gallery_layout": "stacked",
         "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
@@ -131,7 +140,8 @@
           "settings": {
             "icon": "induction",
             "heading": "Induction mode",
-            "text": "Rest your phone against the pad with its speaker facing it. The audio plays through Perch straight away, no pairing, no app."
+            "text": "Rest your phone against the pad with its speaker facing it. The audio plays through Perch straight away, no pairing, no app.",
+            "detail": ""
           }
         },
         "bluetooth": {
@@ -139,7 +149,8 @@
           "settings": {
             "icon": "bluetooth",
             "heading": "Bluetooth 5.4",
-            "text": "Pair once for a stable connection from a phone, tablet or laptop across the room."
+            "text": "Pair once for a stable connection from a phone, tablet or laptop across the room.",
+            "detail": ""
           }
         },
         "stand": {
@@ -147,7 +158,8 @@
           "settings": {
             "icon": "angle",
             "heading": "Stand for phone or tablet",
-            "text": "The foot folds out and the stand tilts up to 75 degrees. Takes a full-size tablet."
+            "text": "The foot folds out and the stand tilts up to 75 degrees. Takes a full-size tablet.",
+            "detail": ""
           }
         },
         "light": {
@@ -155,11 +167,17 @@
           "settings": {
             "icon": "light",
             "heading": "Ambient ring",
-            "text": "A soft gradient around the face, with an off setting for when you want the room dark."
+            "text": "A soft gradient around the face, with an off setting for when you want the room dark.",
+            "detail": ""
           }
         }
       },
-      "block_order": ["induction", "bluetooth", "stand", "light"],
+      "block_order": [
+        "induction",
+        "bluetooth",
+        "stand",
+        "light"
+      ],
       "settings": {
         "anchor": "",
         "eyebrow": "How it works",
@@ -217,7 +235,8 @@
           "settings": {
             "icon": "weight",
             "label": "Weight",
-            "value": "482 g"
+            "value": "482 g",
+            "note": ""
           }
         },
         "box": {
@@ -225,7 +244,8 @@
           "settings": {
             "icon": "ruler",
             "label": "Box size",
-            "value": "18 x 15 x 10 cm"
+            "value": "18 x 15 x 10 cm",
+            "note": ""
           }
         },
         "colour": {
@@ -242,11 +262,21 @@
           "settings": {
             "icon": "shield",
             "label": "Certification",
-            "value": "FCC"
+            "value": "FCC",
+            "note": ""
           }
         }
       },
-      "block_order": ["bluetooth", "battery", "angle", "light", "weight", "box", "colour", "cert"],
+      "block_order": [
+        "bluetooth",
+        "battery",
+        "angle",
+        "light",
+        "weight",
+        "box",
+        "colour",
+        "cert"
+      ],
       "settings": {
         "heading": "Specifications",
         "intro": "",
@@ -283,7 +313,10 @@
           }
         }
       },
-      "block_order": ["bedside", "tablet"],
+      "block_order": [
+        "bedside",
+        "tablet"
+      ],
       "settings": {
         "eyebrow": "From customers",
         "heading": "What people tell us",
@@ -332,13 +365,44 @@
           }
         }
       },
-      "block_order": ["shipping", "returns", "warranty", "checkout"],
+      "block_order": [
+        "shipping",
+        "returns",
+        "warranty",
+        "checkout"
+      ],
       "settings": {
         "color_scheme": "scheme-2",
         "padding_top": 24,
         "padding_bottom": 40
       }
+    },
+    "179320331728a71ac8": {
+      "type": "apps",
+      "blocks": {
+        "alireviews_product_app_block_gQAt9Y": {
+          "type": "shopify://apps/alireviews/blocks/product-app-block/ed1f8756-3ef0-4b52-b2bc-4add334ee46d",
+          "settings": {
+            "product": "",
+            "product_id": "",
+            "hide_full_reviews": false
+          }
+        }
+      },
+      "block_order": [
+        "alireviews_product_app_block_gQAt9Y"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
-  "order": ["main", "features", "specs", "testimonials", "trust"]
+  "order": [
+    "main",
+    "features",
+    "specs",
+    "testimonials",
+    "trust",
+    "179320331728a71ac8"
+  ]
 }
