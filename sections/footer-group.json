@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -22,7 +31,7 @@
           "type": "text",
           "settings": {
             "heading": "Shipping and returns",
-            "subtext": "<p>Free tracked shipping in Canada on every order. Thirty-day returns, no explanation needed, no restocking fee. Twelve-month replacement warranty on defects.</p>"
+            "subtext": "<p>Tracked shipping across Canada, delivered in 5–8 business days. Thirty-day returns, no explanation needed, no restocking fee. Twelve-month replacement warranty on defects.</p>"
           }
         }
       },
