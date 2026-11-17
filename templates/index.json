@@ -583,7 +583,7 @@
           "settings": {
             "heading": "How long does delivery take?",
             "icon": "none",
-            "row_content": "<p>Most orders arrive in 5 to 8 business days with tracking, and the estimate shown at checkout for your address is the real one. Shipping is free in Canada. Any duties or taxes are calculated and shown at checkout, so there is nothing to pay at the door.</p>",
+            "row_content": "<p>Most orders arrive in 5 to 8 business days with tracking, and the estimate shown at checkout for your address is the real one. Shipping is a flat $$12 in Canada. Any duties or taxes are calculated and shown at checkout, so there is nothing to pay at the door.</p>",
             "page": ""
           }
         },
