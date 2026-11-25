@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_liquid_tj7kwT": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"perch-ship-note\" style=\"margin:4px 0 0;font-size:14px;opacity:.85;\">+ $12 tracked shipping in Canada · arrives in 5–8 days</p>\n<style>.installment, shopify-payment-terms, .zegsu-product-title-review-section, [id*=\"alireviews\"], [class*=\"alireviews\"]{display:none!important}</style>\n<script>(function(){var n=document.currentScript.previousElementSibling.previousElementSibling;var p=document.querySelector('[id^=\"price-template\"]');if(n&&p){p.insertAdjacentElement('afterend',n);}})();</script>"
+          }
+        },
         "eyebrow": {
           "type": "text",
           "settings": {
@@ -102,6 +108,7 @@
         }
       },
       "block_order": [
+        "custom_liquid_tj7kwT",
         "eyebrow",
         "title",
         "price",
@@ -317,6 +324,7 @@
         "bedside",
         "tablet"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "From customers",
         "heading": "What people tell us",
@@ -392,6 +400,7 @@
       "block_order": [
         "alireviews_product_app_block_gQAt9Y"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
