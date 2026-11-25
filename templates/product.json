@@ -15,7 +15,7 @@
         "custom_liquid_tj7kwT": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<p class=\"perch-ship-note\" style=\"margin:4px 0 0;font-size:14px;opacity:.85;\">+ $12 tracked shipping in Canada · arrives in 5–8 days</p>\n<style>.installment, shopify-payment-terms, .zegsu-product-title-review-section, [id*=\"alireviews\"], [class*=\"alireviews\"]{display:none!important}</style>\n<script>(function(){function m(){var n=document.querySelector('.perch-ship-note');var p=document.querySelector('[id^=\"price-template\"]');if(n&&p&&p.nextElementSibling!==n){p.insertAdjacentElement('afterend',n);}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',m);}else{m();}})();</script>"
+            "custom_liquid": "<style>.installment, shopify-payment-terms, .zegsu-product-title-review-section, [id*=\"alireviews\"], [class*=\"alireviews\"]{display:none!important}</style>"
           }
         },
         "eyebrow": {
